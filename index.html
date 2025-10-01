@@ -397,6 +397,26 @@
       border-bottom: 1px solid currentColor;
     }
 
+    @media (max-width: 992px) {
+      h1 {
+        font-size: 48px;
+        line-height: 1.1;
+        letter-spacing: -2.4px;
+      }
+
+      h2 {
+        font-size: 36px;
+        line-height: 1.1;
+        letter-spacing: -1.8px;
+      }
+
+      h3 {
+        font-size: 28px;
+        line-height: 1.1;
+        letter-spacing: 0.7px;
+      }
+    }
+
     /* header styles */
     .header {
       width: 100%;
@@ -561,11 +581,7 @@
     }
 
     .main__title {
-      font-size: 64px;
-      letter-spacing: -0.3px;
-      line-height: 1.1;
       font-weight: 600;
-
       color: var(--blue-100);
     }
 
@@ -595,6 +611,22 @@
       margin-top: 50px;
       width: 100%;
       max-width: 380px;
+    }
+
+    @media (max-width: 992px) {
+      .main {
+        padding-top: 60px;
+        padding-bottom: 50px;
+      }
+
+      .main__features {
+        margin-top: 30px;
+      }
+
+      .main .button {
+        margin-top: 50px;
+        max-width: 350px;
+      }
     }
 
     /* advantages */
@@ -654,8 +686,6 @@
       grid-template-rows: 400px 400px;
       gap: 20px;
     }
-
-    .migrants-hiring-card {}
 
     .migrants-hiring-card:nth-child(1) {
       grid-row: 1 / 1;
@@ -754,8 +784,6 @@
       max-width: 380px;
       width: 100%;
     }
-
-    .sign-up__illustration {}
 
     /* reliability */
     .reliability {
