@@ -159,8 +159,12 @@
       color: var(--blue-400);
     }
 
-    .section__title+.text {
+    .section__title+.section__subtitle {
       margin-top: -20px;
+    }
+
+    .section__subtitle {
+      margin-bottom: 50px;
     }
 
     .checkbox {
@@ -199,6 +203,98 @@
 
     .checkbox input:checked+div {
       background-color: var(--blue-100);
+    }
+
+    .tabs {
+      width: 100%;
+    }
+
+    .tabs__links {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .tabs__link {
+      flex: 1 1 auto;
+      padding: 15px;
+      border-radius: 100px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: var(--blue-800);
+      color: var(--blue-100);
+
+      font-size: 18px;
+      font-weight: 400;
+    }
+
+    .tabs__link.active {
+      background-color: var(--blue-400);
+      color: #fff;
+    }
+
+    .tabs__body {
+      margin-top: 50px;
+    }
+
+    .tabs__page:not(.active) {
+      display: none;
+    }
+
+    .field {
+      display: block;
+
+      border-radius: 100px;
+      padding: 20px 30px;
+
+      background-color: var(--blue-800);
+      border: 1px solid var(--blue-100);
+    }
+
+    .field input {
+      width: 100%;
+
+      background-color: transparent;
+      border: none;
+      outline: none;
+
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--blue-100);
+    }
+
+    .field input::placeholder {
+      color: #182A4980;
+    }
+
+    .agreements {
+      margin-top: 30px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .agreement {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .agreement__text {
+      font-size: 12px;
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .agreement__text a {
+      border-bottom: 1px solid currentColor;
     }
 
     /* header styles */
@@ -398,7 +494,6 @@
     }
 
     .migrants-hiring .text {
-      margin-bottom: 50px;
       color: var(--blue-900);
     }
 
@@ -429,7 +524,6 @@
     }
 
     .migrants-hiring-card__title {
-      margin-bottom: 30px;
       color: var(--blue-100);
       font-weight: 600;
     }
@@ -444,10 +538,6 @@
     /* search migrants */
     .search-specialists {
       background-color: var(--blue-900);
-    }
-
-    .search-specialists .text {
-      margin-bottom: 50px;
     }
 
     .search-specialists-fields {
@@ -507,59 +597,6 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-    }
-
-    .sign-up-form__field {
-      display: block;
-
-      border-radius: 100px;
-      padding: 20px 30px;
-
-      background-color: var(--blue-800);
-      border: 1px solid var(--blue-100);
-    }
-
-    .sign-up-form__field input {
-      width: 100%;
-
-      background-color: transparent;
-      border: none;
-      outline: none;
-
-      font-size: 18px;
-      font-weight: 600;
-      line-height: 1;
-      color: var(--blue-100);
-    }
-
-    .sign-up-form__field input::placeholder {
-      color: #182A4980;
-    }
-
-    .sign-up-form__agreements {
-      margin-top: 30px;
-
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-    .sign-up-form__agreement {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .sign-up-form__agreement {
-      font-size: 12px;
-      line-height: 1.1;
-      font-weight: 600;
-      letter-spacing: -0.5px;
-    }
-
-    .sign-up-form__agreement a {
-      border-bottom: 1px solid currentColor;
     }
 
     .sign-up-form__button {
@@ -628,9 +665,10 @@
     }
 
     .feedbacks-card {
-      flex: 0 0 560px;
-      width: 560px;
-      max-width: 560px;
+      --card-width: 560px;
+
+      flex: 0 0 var(--card-width);
+      max-width: var(--card-width);
 
       padding: 30px 80px 45px 30px;
 
@@ -645,17 +683,124 @@
     .feedbacks-card__text {
       margin-top: 30px;
       flex: 1 1 auto;
+
+      font-family: 'ABeeZee', sans-serif;
+      font-style: italic;
+      font-size: 18px;
     }
 
-    .feedbacks-card__user {}
+    .feedbacks-card__user {
+      margin-top: 10px;
 
-    .feedbacks-card__avatar {}
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
 
-    .feedbacks-card__user-data {}
+    .feedbacks-card__avatar {
+      --size: 64px;
 
-    .feedbacks-card__name {}
+      width: var(--size);
+      height: var(--size);
+      flex: 0 0 var(--size);
+      border-radius: var(--size);
 
-    .feedbacks-card__role {}
+      background-color: #fff;
+      overflow: hidden;
+    }
+
+    .feedbacks-card__avatar img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .feedbacks-card__user-data {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+
+      font-family: 'ABeeZee', sans-serif;
+      font-style: italic;
+    }
+
+    .feedbacks-card__name {
+      font-size: 18px;
+    }
+
+    .feedbacks-card__role {
+      font-size: 16px;
+    }
+
+    /* steps */
+    .steps {
+      padding-top: 150px;
+      padding-bottom: 150px;
+    }
+
+    .steps__grid {
+      --card-height: 280px;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .steps-card {
+      height: var(--card-height);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .steps-card__title {
+      font-weight: 600;
+    }
+
+    .steps-card__text {
+      margin-top: 30px;
+      font-size: 20px;
+      line-height: 1.1;
+      letter-spacing: -0.8px;
+    }
+
+    .steps-card__index {
+      position: absolute;
+      bottom: -15px;
+      right: -5px;
+
+      font-size: 128px;
+      font-weight: 600;
+      letter-spacing: -13px;
+      line-height: 1.1;
+
+      color: var(--blue-400);
+    }
+
+    /* contact us */
+    .contact-us {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .contact-us .section__subtitle {
+      font-weight: normal;
+    }
+
+    .contact-us__form {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .contact-us__form .field,
+    .contact-us__form .button {
+      flex: 1 1 100%;
+      max-width: 380px;
+    }
+
+    .contact-us .agreement {
+      margin-top: 30px;
+    }
   </style>
 </head>
 
@@ -818,19 +963,19 @@
           <div class="sign-up-form__subtitle">Наши специалисты свяжутся с вами в течение 24 часов.</div>
 
           <div class="sign-up-form__body">
-            <div class="sign-up-form__field">
+            <div class="field">
               <input type="text" placeholder="Имя">
             </div>
-            <div class="sign-up-form__field">
+            <div class="field">
               <input type="tel" placeholder="Телефон">
             </div>
-            <div class="sign-up-form__field">
+            <div class="field">
               <input type="email" placeholder="Email">
             </div>
           </div>
 
-          <div class="sign-up-form__agreements">
-            <label for="privacy-policy-checkbox" class="sign-up-form__agreement">
+          <div class="agreements">
+            <label class="agreement" for="privacy-policy-checkbox">
               <div class="checkbox">
                 <input type="checkbox" id="privacy-policy-checkbox">
                 <div></div>
@@ -888,24 +1033,7 @@
             </div>
             <div class="feedbacks-card__user">
               <div class="feedbacks-card__avatar">
-                <img src="" alt="">
-              </div>
-              <div class="feedbacks-card__user-data">
-                <div class="feedbacks-card__name">Имя Фамилия</div>
-                <div class="feedbacks-card__role">Должность, компания</div>
-              </div>
-            </div>
-          </div>
-          <div class="card feedbacks-card">
-            <h3 class="feedbacks-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h3>
-            <div class="feedbacks-card__text">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-              ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-            </div>
-            <div class="feedbacks-card__user">
-              <div class="feedbacks-card__avatar">
-                <img src="" alt="">
+                <!-- <img src="" alt=""> -->
               </div>
               <div class="feedbacks-card__user-data">
                 <div class="feedbacks-card__name">Имя Фамилия</div>
@@ -923,7 +1051,7 @@
             </div>
             <div class="feedbacks-card__user">
               <div class="feedbacks-card__avatar">
-                <img src="" alt="">
+                <!-- <img src="" alt=""> -->
               </div>
               <div class="feedbacks-card__user-data">
                 <div class="feedbacks-card__name">Имя Фамилия</div>
@@ -941,7 +1069,25 @@
             </div>
             <div class="feedbacks-card__user">
               <div class="feedbacks-card__avatar">
-                <img src="" alt="">
+                <!-- <img src="" alt=""> -->
+              </div>
+              <div class="feedbacks-card__user-data">
+                <div class="feedbacks-card__name">Имя Фамилия</div>
+                <div class="feedbacks-card__role">Должность, компания</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="card feedbacks-card">
+            <h3 class="feedbacks-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h3>
+            <div class="feedbacks-card__text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+            </div>
+            <div class="feedbacks-card__user">
+              <div class="feedbacks-card__avatar">
+                <!-- <img src="" alt=""> -->
               </div>
               <div class="feedbacks-card__user-data">
                 <div class="feedbacks-card__name">Имя Фамилия</div>
@@ -952,7 +1098,185 @@
         </div>
       </div>
     </section>
+
+    <section class="section steps">
+      <div class="container">
+        <h2 class="section__title">
+          Прозрачные этапы <br />
+          <span>сотрудничества</span>
+        </h2>
+
+        <div data-tabs class="tabs">
+          <div class="tabs__links">
+            <a href="#" data-tabs-link class="tabs__link active">Обсуждение задачи</a>
+            <a href="#" data-tabs-link class="tabs__link">Заключение договора</a>
+            <a href="#" data-tabs-link class="tabs__link">Подбор и найм кандидатов</a>
+          </div>
+          <div class="tabs__body">
+            <div data-tabs-page class="tabs__page active steps__grid">
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Выясняем вашу потребность</h3>
+                <div class="steps-card__text">
+                  Сколько специалистов вам необходимо, на какие позиции и к какому сроку
+                </div>
+                <div class="steps-card__index">01</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Изучаем детали вакансии</h3>
+                <div class="steps-card__text">
+                  Условия труда, опыт требуемых специалистов, уровень квалификации и др.
+                </div>
+                <div class="steps-card__index">02</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Формируем запрос</h3>
+                <div class="steps-card__text">
+                  Фиксируем все параметры в техническом задании и согласовываем его
+                </div>
+                <div class="steps-card__index">03</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Делаем расчет стоимости</h3>
+                <div class="steps-card__text">
+                  Составляем прозрачную смету с фиксированной стоимостью подбора
+                </div>
+                <div class="steps-card__index">04</div>
+              </div>
+            </div>
+
+            <div data-tabs-page class="tabs__page steps__grid">
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Оговариваем условия</h3>
+                <div class="steps-card__text">
+                  Определяем ключевые условия сотрудничества
+                  и ответственность сторон
+                </div>
+                <div class="steps-card__index">01</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Согласовываем стоимость</h3>
+                <div class="steps-card__text">
+                  Фиксируем цену на услуги и гарантию отсутствия скрытых платежей
+                </div>
+                <div class="steps-card__index">02</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Фиксируем договорённости</h3>
+                <div class="steps-card__text">
+                  Подписываем договор с оговоренными ранее условиями сотрудничества
+                </div>
+                <div class="steps-card__index">03</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Ожидаем предоплату</h3>
+                <div class="steps-card__text">
+                  Вы вносите часть оплаты и мы запускаем процесс поиска кандидатов
+                </div>
+                <div class="steps-card__index">04</div>
+              </div>
+            </div>
+
+            <div data-tabs-page class="tabs__page steps__grid">
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Отбираем кандидатов</h3>
+                <div class="steps-card__text">
+                  Проводим собеседования с подходящими кандидатами, проверяем их навыки и опыт,
+                  утверждаем отобранных специалистов.
+                </div>
+                <div class="steps-card__index">01</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Проводим легализацию</h3>
+                <div class="steps-card__text">
+                  Содействуем в получении виз и разрешений на работу. Решаем все вопросы с консульствами и организуем
+                  трансфер специалистов.
+                </div>
+                <div class="steps-card__index">02</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Трудоустраиваем и сопровождаем</h3>
+                <div class="steps-card__text">
+                  Заключаем трудовой договор, обеспечиваем выход сотрудника в срок, помогаем пройти адаптацию на новом
+                  месте работы
+                </div>
+                <div class="steps-card__index">03</div>
+              </div>
+
+              <div class="card steps-card">
+                <h3 class="steps-card__title">Ожидаем финальный расчет</h3>
+                <div class="steps-card__text">
+                  Вы вносите оставшуюся часть оплаты после выхода отобранных специалистов на работу
+                </div>
+                <div class="steps-card__index">04</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-us">
+      <div class="container">
+        <h2 class="section__title">
+          Узнайте стоимость подбора <br />
+          <span>специалистов для вашего бизнеса</span>
+        </h2>
+        <div class="text section__subtitle">
+          Наш менеджер свяжется с вами, уточнит задачу и рассчитает стоимость без скрытых платежей
+        </div>
+
+        <div class="contact-us__form">
+          <div class="field">
+            <input type="tel" placeholder="+7 (000) 000-00-00">
+          </div>
+
+          <button class="button button--filled">
+            Рассчитать стоимость подбора
+          </button>
+        </div>
+
+        <label class="agreement" for="personal-data-checkbox">
+          <div class="checkbox">
+            <input type="checkbox" id="personal-data-checkbox">
+            <div></div>
+          </div>
+
+          <p class="agreement__text">Согласие на обработку персональных данных</p>
+        </label>
+      </div>
+    </section>
   </div>
+
+  <script>
+    // tabs
+    const tabs = Array.from(document.querySelectorAll('[data-tabs]'))
+    const tabsActiveClass = 'active'
+
+    tabs.forEach(tab => {
+      const links = Array.from(tab.querySelectorAll('[data-tabs-link]'))
+      const pages = Array.from(tab.querySelectorAll('[data-tabs-page]'))
+
+      links.forEach((link, index) => {
+        link.addEventListener('click', (e) => {
+          e.preventDefault()
+
+          links.forEach(link => link.classList.remove(tabsActiveClass))
+          pages.forEach(page => page.classList.remove(tabsActiveClass))
+
+          links[index].classList.add(tabsActiveClass)
+          pages[index].classList.add(tabsActiveClass)
+        })
+      })
+    })
+  </script>
 </body>
 
 </html>
