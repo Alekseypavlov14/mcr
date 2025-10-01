@@ -413,7 +413,43 @@
       h3 {
         font-size: 28px;
         line-height: 1.1;
-        letter-spacing: 0.7px;
+        letter-spacing: -1px;
+      }
+
+      .text {
+        font-size: 20px;
+        letter-spacing: -0.8px;
+      }
+
+      .card {
+        padding: 20px;
+      }
+
+      .section {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .tabs__links {
+        gap: 12px;
+      }
+
+      .tabs__link {
+        padding-top: 8px;
+        padding-bottom: 10px;
+        font-size: 12px;
+      }
+
+      .tabs__body {
+        margin-top: 30px;
+      }
+
+      .field {
+        padding: 20px 15px;
+      }
+
+      .agreement__text {
+        font-size: 10px;
       }
     }
 
@@ -658,7 +694,32 @@
     .advantages-card__text {
       font-size: 20px;
       line-height: 1.1;
+      letter-spacing: -0.8px;
       color: var(--blue-100);
+    }
+
+    @media (max-width: 992px) {
+      .advantages {
+        padding-top: 0px;
+        padding-bottom: 50px;
+      }
+
+      .advantages .container {
+        overflow-x: auto;
+      }
+
+      .advantages .container::-webkit-scrollbar {
+        display: none;
+      }
+
+      .advantages-card {
+        min-width: 350px;
+      }
+
+      .advantages-card__text {
+        font-size: 18px;
+        letter-spacing: -0.7px;
+      }
     }
 
     /* migrants hiring */
@@ -683,8 +744,11 @@
 
       display: grid;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: 400px 400px;
       gap: 20px;
+    }
+
+    .migrants-hiring-card {
+      min-height: 400px;
     }
 
     .migrants-hiring-card:nth-child(1) {
@@ -715,6 +779,37 @@
       color: var(--blue-100);
     }
 
+    @media (max-width: 992px) {
+      .migrants-hiring__cards {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .migrants-hiring-card {
+        min-height: 350px;
+      }
+
+      .migrants-hiring-card:nth-child(1) {
+        grid-row: 1 / 1;
+        grid-column: 1 / 1;
+      }
+
+      .migrants-hiring-card:nth-child(2) {
+        grid-row: 2 / 2;
+        grid-column: 1 / 1;
+      }
+
+      .migrants-hiring-card:nth-child(3) {
+        grid-row: 3 / 3;
+        grid-column: 1 / 1;
+      }
+
+      .migrants-hiring-card__text {
+        font-size: 18px;
+        letter-spacing: -0.7px;
+      }
+    }
+
     /* search migrants */
     .search-specialists {
       background-color: var(--blue-900);
@@ -736,6 +831,19 @@
       font-size: 24px;
       font-weight: 600;
       line-height: 1.1;
+    }
+
+    @media (max-width: 992px) {
+      .search-specialists-fields {
+        --card-height: 300px;
+
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      }
+
+      .search-specialists-fields-card__title {
+        font-size: 28px;
+        letter-spacing: -1.2px;
+      }
     }
 
     /* sign up form */
@@ -803,6 +911,20 @@
       height: var(--card-height);
     }
 
+    @media (max-width: 992px) {
+      .reliability {
+        padding-top: 50px;
+        padding-bottom: 100px;
+      }
+
+      .reliability__cards {
+        --card-height: 60px;
+
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 10px;
+      }
+    }
+
     /* feedbacks */
     .feedbacks {
       padding-top: 50px;
@@ -836,10 +958,13 @@
     .feedbacks-slides::before,
     .feedbacks-slides::after {
       content: '';
+
       display: block;
-      height: 100px;
+      height: 1px;
+
       width: var(--margin);
       flex: 0 0 var(--margin);
+      min-width: 1px;
     }
 
     .feedbacks-card {
@@ -910,6 +1035,34 @@
       font-size: 16px;
     }
 
+    @media (max-width: 992px) {
+      .feedbacks .section__title {
+        margin-bottom: 30px;
+        text-shadow: none;
+      }
+
+      .feedbacks-card {
+        --card-width: 355px;
+
+        padding-right: 15px;
+      }
+
+      .feedbacks-card__title {
+        font-size: 20px;
+        letter-spacing: -0.6px;
+      }
+
+      .feedbacks-card__text {
+        margin-top: 20px;
+        font-size: 18px;
+        letter-spacing: -0.5px;
+      }
+
+      .feedbacks-card__user {
+        margin-top: 20px;
+      }
+    }
+
     /* steps */
     .steps {
       padding-top: 150px;
@@ -954,6 +1107,26 @@
       color: var(--blue-400);
     }
 
+    @media (max-width: 992px) {
+      .steps {
+        padding-top: 50px;
+        padding-bottom: 50px;
+      }
+
+      .steps__grid {
+        --card-height: 305px;
+      }
+
+      .steps-card__text {
+        font-size: 18px;
+        letter-spacing: -0.7px;
+      }
+
+      .steps-card__index {
+        right: -10px;
+      }
+    }
+
     /* contact us */
     .contact-us {
       padding-top: 50px;
@@ -978,6 +1151,18 @@
 
     .contact-us .agreement {
       margin-top: 30px;
+    }
+
+    @media (max-width: 992px) {
+      .contact-us__form {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .contact-us__form .field,
+      .contact-us .button {
+        max-width: 100%;
+      }
     }
 
     /* footer */
@@ -1032,6 +1217,25 @@
     .footer__order {
       width: 100%;
       max-width: 280px;
+    }
+
+    @media (max-width: 992px) {
+      .footer__phone-numbers a {
+        font-size: 36px;
+        letter-spacing: -1.1px;
+      }
+
+      .footer .social-media {
+        --button-size: 60px;
+        --icon-size: 30px;
+      }
+
+      .footer .button {
+        padding: 20px;
+        width: auto;
+
+        font-weight: 600;
+      }
     }
   </style>
 </head>
