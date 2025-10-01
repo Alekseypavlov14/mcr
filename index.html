@@ -102,6 +102,14 @@
       border: none;
       outline: none;
       cursor: pointer;
+
+      background-color: #fff;
+      color: var(--blue-100);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      background-color: var(--blue-900);
     }
 
     .button--filled {
@@ -472,6 +480,7 @@
 
     .advantages-card__title {
       color: var(--blue-100);
+      font-weight: 600;
     }
 
     .advantages-card__text {
@@ -529,6 +538,7 @@
     }
 
     .migrants-hiring-card__text {
+      margin-top: 30px;
       font-size: 20px;
       font-weight: 400;
       line-height: 1.1;
@@ -800,6 +810,60 @@
 
     .contact-us .agreement {
       margin-top: 30px;
+    }
+
+    /* footer */
+    .footer {
+      padding-top: 50px;
+      padding-bottom: 60px;
+      background-color: var(--blue-400);
+    }
+
+    .footer .container {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+    }
+
+    .footer__row {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .footer__phone-numbers {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .footer__phone-numbers a {
+      color: #fff;
+
+      font-size: 48px;
+      line-height: 1.1;
+      letter-spacing: -1.2px;
+
+      border-bottom: 3px solid currentColor;
+      transition: 0.3s;
+    }
+
+    .footer__phone-numbers a:hover {
+      color: var(--blue-500);
+    }
+
+    .footer__logo {
+      height: 56px;
+    }
+
+    .footer__logo img {
+      display: block;
+      height: 100%;
+    }
+
+    .footer__order {
+      width: 100%;
+      max-width: 280px;
     }
   </style>
 </head>
@@ -1253,6 +1317,37 @@
         </label>
       </div>
     </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row">
+          <div class="footer__phone-numbers">
+            <a href="tel:+74993022629">+7 (499) 302-26-29</a>
+            <a href="tel:+74992898872">+7 (499) 289-88-72</a>
+          </div>
+
+          <div class="social-media">
+            <a href="#" class="social-media__icon">
+              <img src="./assets/img/header-phone.svg" alt="">
+            </a>
+            <a href="#" class="social-media__icon">
+              <img src="./assets/img/header-whatsapp.svg" alt="">
+            </a>
+            <a href="#" class="social-media__icon">
+              <img src="./assets/img/header-telegram.svg" alt="">
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__row">
+          <a href="#" class="footer__logo">
+            <img src="./assets/img/footer-logo.svg" alt="">
+          </a>
+
+          <a href="#" class="button footer__order">Заказать звонок</a>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <script>
