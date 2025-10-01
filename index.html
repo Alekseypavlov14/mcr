@@ -28,11 +28,21 @@
       margin: 0;
     }
 
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-weight: 400;
+    }
+
     /* Shared styles */
     :root {
       --blue-100: #182A49;
-      --blue-400: #0952cf;
-      --blue-500: #2D6BD9;
+      --blue-300: #0952cf;
+      --blue-400: #2D6BD9;
+      --blue-500: #8BB0F0;
       --blue-600: #8daadd;
       --blue-700: #8B9BB3;
       --blue-800: #E1EAF7;
@@ -54,6 +64,7 @@
       height: 100%;
 
       background-color: var(--blue-900);
+      color: var(--blue-100);
     }
 
     .container {
@@ -77,18 +88,48 @@
     }
 
     .button--filled {
-      background-color: var(--blue-500);
+      background-color: var(--blue-400);
       color: var(--blue-900);
       transition: 0.3s;
     }
 
     .button--filled:hover {
-      background-color: var(--blue-400);
+      background-color: var(--blue-300);
+    }
+
+    h1 {
+      font-size: 64px;
+      line-height: 1.1;
+    }
+
+    h2 {
+      font-size: 48px;
+      line-height: 1.1;
     }
 
     h3 {
       font-size: 32px;
       line-height: 1.1;
+    }
+
+    .text {
+      font-size: 24px;
+      line-height: 1.1;
+    }
+
+    .card {
+      background-color: var(--blue-800);
+      border-radius: 30px;
+      padding: 30px 20px;
+    }
+
+    .section {
+      width: 100%;
+    }
+
+    .section__title {
+      font-weight: 600;
+      margin-bottom: 50px;
     }
 
     /* header styles */
@@ -141,7 +182,7 @@
     }
 
     .header .nav .nav__link:hover {
-      color: var(--blue-500);
+      color: var(--blue-400);
     }
 
     .header .header__phone-numbers {
@@ -161,7 +202,7 @@
     }
 
     .header__phone-numbers a:hover {
-      color: var(--blue-500);
+      color: var(--blue-400);
     }
 
     .social-media {
@@ -216,7 +257,7 @@
     }
 
     .main__title span {
-      color: var(--blue-500);
+      color: var(--blue-400);
     }
 
     .main__features {
@@ -260,14 +301,9 @@
     .advantages-card {
       height: 235px;
 
-      padding: 30px 20px;
-      border-radius: 30px;
-
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-
-      background-color: var(--blue-800);
     }
 
     .advantages-card__title {
@@ -276,6 +312,67 @@
 
     .advantages-card__text {
       font-size: 20px;
+      line-height: 1.1;
+      color: var(--blue-100);
+    }
+
+    /* migrants hiring */
+    .migrants-hiring {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 100px;
+      background-color: var(--blue-400);
+    }
+
+    .migrants-hiring .section__title {
+      color: var(--blue-900);
+      margin-bottom: 30px;
+    }
+
+    .migrants-hiring .section__title span {
+      color: var(--blue-500);
+    }
+
+    .migrants-hiring .text {
+      margin-bottom: 50px;
+      color: var(--blue-900);
+    }
+
+    .migrants-hiring__cards {
+      width: 100%;
+
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 400px 400px;
+      gap: 20px;
+    }
+
+    .migrants-hiring-card {}
+
+    .migrants-hiring-card:nth-child(1) {
+      grid-row: 1 / 1;
+      grid-column: 1 / 1;
+    }
+
+    .migrants-hiring-card:nth-child(2) {
+      grid-row: 2 / 2;
+      grid-column: 1 / 1;
+    }
+
+    .migrants-hiring-card:nth-child(3) {
+      grid-row: 1 / -1;
+      grid-column: 2 / 2;
+    }
+
+    .migrants-hiring-card__title {
+      margin-bottom: 30px;
+      color: var(--blue-100);
+      font-weight: 600;
+    }
+
+    .migrants-hiring-card__text {
+      font-size: 20px;
+      font-weight: 400;
       line-height: 1.1;
       color: var(--blue-100);
     }
@@ -344,17 +441,58 @@
 
     <div class="advantages">
       <div class="container">
-        <div class="advantages-card">
+        <div class="card advantages-card">
           <h3 class="advantages-card__title">Гарантия замены сотрудника за 7 дней</h3>
           <div class="advantages-card__text">За наш счёт</div>
         </div>
-        <div class="advantages-card">
+        <div class="card advantages-card">
           <h3 class="advantages-card__title">Фиксированная прозрачная стоимость</h3>
           <div class="advantages-card__text">Без доплат</div>
         </div>
-        <div class="advantages-card">
+        <div class="card advantages-card">
           <h3 class="advantages-card__title">Масштабируемая поставка</h3>
           <div class="advantages-card__text">Под ваш сезон и загрузку</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section migrants-hiring">
+      <div class="container">
+        <h2 class="section__title">Обеспечиваем безопасный<br /><span>найм мигрантов</span></h2>
+        <div class="text">
+          За счёт выстроенной системы подбора, легализации
+          и адаптации персонала
+        </div>
+
+        <div class="migrants-hiring__cards">
+          <div class="card migrants-hiring-card">
+            <h3 class="migrants-hiring-card__title">Глубоко погружаемся в ваш запрос и анализируем вакансии</h3>
+            <div class="migrants-hiring-card__text">
+              Изучаем специфику отрасли, требования
+              к кандидатам и особенности условий труда,
+              чтобы отбирать только релевантных специалистов
+            </div>
+            <img src="" alt="">
+          </div>
+
+          <div class="card migrants-hiring-card">
+            <h3 class="migrants-hiring-card__title">Предоставляем проверенных кандидатов из собственной базы</h3>
+            <div class="migrants-hiring-card__text">
+              Проводим поэтапный отбор, учитываем опыт, навыки
+              и рекомендации — поэтому гарантируем сотрудников, которые соответствуют вашим требованиям
+            </div>
+            <img src="" alt="">
+          </div>
+
+          <div class="card migrants-hiring-card">
+            <h3 class="migrants-hiring-card__title">Помогаем адаптироваться на новом месте работы</h3>
+            <div class="migrants-hiring-card__text">
+              Проводим инструктажи, знакомим с рабочим процессом, предоставляем
+              необходимую информацию
+              и сопровождаем в первые недели работы
+            </div>
+            <img src="" alt="">
+          </div>
         </div>
       </div>
     </div>
