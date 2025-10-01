@@ -74,6 +74,16 @@
       margin: 0 auto;
     }
 
+    ::selection {
+      color: #fff;
+      background-color: var(--blue-400);
+    }
+
+    ::-moz-selection {
+      color: #fff;
+      background-color: var(--blue-400);
+    }
+
     /* components */
     .button {
       display: flex;
@@ -85,6 +95,10 @@
 
       font-size: 18px;
       line-height: 1;
+
+      border: none;
+      outline: none;
+      cursor: pointer;
     }
 
     .button--filled {
@@ -100,21 +114,25 @@
     h1 {
       font-size: 64px;
       line-height: 1.1;
+      letter-spacing: -3px;
     }
 
     h2 {
       font-size: 48px;
       line-height: 1.1;
+      letter-spacing: -2px;
     }
 
     h3 {
       font-size: 32px;
       line-height: 1.1;
+      letter-spacing: -1.2px;
     }
 
     .text {
       font-size: 24px;
       line-height: 1.1;
+      letter-spacing: -0.9px;
     }
 
     .card {
@@ -125,11 +143,51 @@
 
     .section {
       width: 100%;
+      padding-top: 50px;
+      padding-bottom: 100px;
     }
 
     .section__title {
       font-weight: 600;
       margin-bottom: 50px;
+    }
+
+    .checkbox {
+      --size: 16px;
+
+      width: var(--size);
+      height: var(--size);
+      flex: 0 0 var(--size);
+
+      position: relative;
+      cursor: pointer;
+    }
+
+    .checkbox input {
+      display: block;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      height: 100%;
+
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .checkbox div {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+      border: 1px solid var(--blue-100);
+      transition: 0.3s;
+    }
+
+    .checkbox input:checked+div {
+      background-color: var(--blue-100);
     }
 
     /* header styles */
@@ -286,20 +344,19 @@
 
     /* advantages */
     .advantages {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 100px;
       background-color: var(--blue-900);
     }
 
     .advantages .container {
+      --card-height: 235px;
+
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
 
     .advantages-card {
-      height: 235px;
+      height: var(--card-height);
 
       display: flex;
       flex-direction: column;
@@ -318,9 +375,6 @@
 
     /* migrants hiring */
     .migrants-hiring {
-      width: 100%;
-      padding-top: 50px;
-      padding-bottom: 100px;
       background-color: var(--blue-400);
     }
 
@@ -376,6 +430,149 @@
       line-height: 1.1;
       color: var(--blue-100);
     }
+
+    /* search migrants */
+    .search-specialists {
+      background-color: var(--blue-900);
+    }
+
+    .search-specialists .section__title {
+      margin-bottom: 30px;
+    }
+
+    .search-specialists .section__title span {
+      color: var(--blue-400);
+    }
+
+    .search-specialists .text {
+      margin-bottom: 50px;
+    }
+
+    .search-specialists-fields {
+      --card-height: 235px;
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(var(--card-height), 1fr));
+      gap: 20px;
+    }
+
+    .search-specialists-fields-card {
+      height: var(--card-height);
+    }
+
+    .search-specialists-fields-card__title {
+      font-size: 24px;
+      font-weight: 600;
+      line-height: 1.1;
+    }
+
+    /* sign up form */
+    .sign-up {
+      background-color: var(--blue-900);
+    }
+
+    .sign-up .container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .sign-up-form {
+      border-radius: 30px;
+      background-color: #fff;
+      padding: 40px 20px 20px 20px;
+    }
+
+    .sign-up-form__title {
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.9px;
+      font-weight: 600;
+      color: var(--blue-100);
+    }
+
+    .sign-up-form__subtitle {
+      margin-top: 30px;
+      font-size: 24px;
+      line-height: 1.1;
+      letter-spacing: -0.9px;
+      font-weight: 600;
+      color: var(--blue-700);
+    }
+
+    .sign-up-form__body {
+      margin-top: 50px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sign-up-form__field {
+      display: block;
+
+      border-radius: 100px;
+      padding: 20px 30px;
+
+      background-color: var(--blue-800);
+      border: 1px solid var(--blue-100);
+    }
+
+    .sign-up-form__field input {
+      width: 100%;
+
+      background-color: transparent;
+      border: none;
+      outline: none;
+
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 1;
+      color: var(--blue-100);
+    }
+
+    .sign-up-form__field input::placeholder {
+      color: #182A4980;
+    }
+
+    .sign-up-form__agreements {
+      margin-top: 30px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .sign-up-form__agreement {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .sign-up-form__agreement {
+      font-size: 12px;
+      line-height: 1.1;
+      font-weight: 600;
+      letter-spacing: -0.5px;
+    }
+
+    .sign-up-form__agreement a {
+      border-bottom: 1px solid currentColor;
+    }
+
+    .sign-up-form__button {
+      margin-top: 50px;
+      max-width: 380px;
+      width: 100%;
+    }
+
+    .button {}
+
+    .button--filled {}
+
+    .sign-up__illustration {}
+
+    .section__title {}
   </style>
 </head>
 
@@ -439,7 +636,7 @@
       </div>
     </main>
 
-    <div class="advantages">
+    <section class="section advantages">
       <div class="container">
         <div class="card advantages-card">
           <h3 class="advantages-card__title">Гарантия замены сотрудника за 7 дней</h3>
@@ -454,9 +651,9 @@
           <div class="advantages-card__text">Под ваш сезон и загрузку</div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="section migrants-hiring">
+    <section class="section migrants-hiring">
       <div class="container">
         <h2 class="section__title">Обеспечиваем безопасный<br /><span>найм мигрантов</span></h2>
         <div class="text">
@@ -495,7 +692,84 @@
           </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <section class="section search-specialists">
+      <div class="container">
+        <h2 class="section__title">Находим лучших<br /><span>специалистов</span></h2>
+        <div class="text">Для разных сфер бизнеса и производства</div>
+
+        <div class="search-specialists-fields">
+          <div class="card search-specialists-fields-card">
+            <div class="search-specialists-fields-card__title">Швейное производство</div>
+          </div>
+          <div class="card search-specialists-fields-card">
+            <div class="search-specialists-fields-card__title">Промышленные предприятия</div>
+          </div>
+          <div class="card search-specialists-fields-card">
+            <div class="search-specialists-fields-card__title">Строительство и ремонт</div>
+          </div>
+          <div class="card search-specialists-fields-card">
+            <div class="search-specialists-fields-card__title">Складская логистика</div>
+          </div>
+          <div class="card search-specialists-fields-card">
+            <div class="search-specialists-fields-card__title">Гостиничное дело и туризм</div>
+          </div>
+          <div class="card search-specialists-fields-card">
+            <div class="search-specialists-fields-card__title">С/X деятельность</div>
+          </div>
+          <div class="card search-specialists-fields-card">
+            <div class="search-specialists-fields-card__title">Сервисное обслуживание: клининг, доставка</div>
+          </div>
+          <div class="card search-specialists-fields-card">
+            <div class="search-specialists-fields-card__title">Транспортная логистика</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sign-up">
+      <div class="container">
+        <div class="sign-up-form">
+          <div class="sign-up-form__title">Мы предоставим персонализированное предложение с расчетом по запросу. </div>
+          <div class="sign-up-form__subtitle">Наши специалисты свяжутся с вами в течение 24 часов.</div>
+
+          <div class="sign-up-form__body">
+            <div class="sign-up-form__field">
+              <input type="text" placeholder="Имя">
+            </div>
+            <div class="sign-up-form__field">
+              <input type="tel" placeholder="Телефон">
+            </div>
+            <div class="sign-up-form__field">
+              <input type="email" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="sign-up-form__agreements">
+            <label for="privacy-policy-checkbox" class="sign-up-form__agreement">
+              <div class="checkbox">
+                <input type="checkbox" id="privacy-policy-checkbox">
+                <div></div>
+              </div>
+
+              <p>
+                Я соглашаюсь с обработкой персональных данных и ознакомлен с 
+                <a href="https://mkresource.ru/privacy-policy">политикой конфиденциальности</a>
+              </p>
+            </label>
+          </div>
+
+          <button class="sign-up-form__button button button--filled">Получить предложение</butt>
+        </div>
+        <div class="sign-up__illustration">
+          <h2 class="section__title">
+            Закройте вакансию <br />
+            <span>уже сегодня</span>
+          </h2>
+        </div>
+      </div>
+    </section>
   </div>
 </body>
 
