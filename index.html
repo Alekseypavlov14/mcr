@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>МСР</title>
+
+  <style>
+    /* Fonts */
+    @import url(https://fonts.googleapis.com/css?family=Open+Sans:regular,600);
+    @import url(https://fonts.googleapis.com/css?family=ABeeZee:regular,italic);
+
+    /* Style resettings */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    label,
+    p {
+      margin: 0;
+    }
+
+    /* Shared styles */
+    :root {
+      --blue-100: #182A49;
+      --blue-400: #0952cf;
+      --blue-500: #2D6BD9;
+      --blue-600: #8daadd;
+      --blue-700: #8B9BB3;
+      --blue-800: #E1EAF7;
+      --blue-900: #F1F3F9;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 1px;
+      min-height: 100%;
+
+      font-size: 14px;
+      font-family: 'Open Sans', sans-serif;
+    }
+
+    .wrapper {
+      width: 100%;
+      height: 100%;
+
+      background-color: var(--blue-900);
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1210px;
+      padding: 0px 15px;
+      margin: 0 auto;
+    }
+
+    /* components */
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 20px;
+      border-radius: 100px;
+
+      font-size: 18px;
+      line-height: 1;
+    }
+
+    .button--filled {
+      background-color: var(--blue-500);
+      color: var(--blue-900);
+      transition: 0.3s;
+    }
+
+    .button--filled:hover {
+      background-color: var(--blue-400);
+    }
+
+    h3 {
+      font-size: 32px;
+      line-height: 1.1;
+    }
+
+    /* header styles */
+    .header {
+      width: 100%;
+      padding: 20px 0px;
+    }
+
+    .header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .header .logo {
+      display: block;
+      height: 48px;
+
+      cursor: pointer;
+    }
+
+    .header .logo img {
+      display: block;
+      height: 100%;
+    }
+
+    .header .nav {
+      flex: 1 1 auto;
+
+      border-radius: 100px;
+      padding: 20px 5px;
+
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+
+      background-color: var(--blue-800);
+    }
+
+    .header .nav .nav__link {
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 1.1;
+      letter-spacing: -0.4px;
+      color: var(--blue-100);
+
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .header .nav .nav__link:hover {
+      color: var(--blue-500);
+    }
+
+    .header .header__phone-numbers {
+      padding-right: 30px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .header__phone-numbers a {
+      font-size: 16px;
+      line-height: 1.1;
+      letter-spacing: -0.3px;
+      color: var(--blue-100);
+      transition: 0.3s;
+    }
+
+    .header__phone-numbers a:hover {
+      color: var(--blue-500);
+    }
+
+    .social-media {
+      --button-size: 60px;
+      --icon-size: 30px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-media .social-media__icon {
+      flex: 0 0 var(--button-size);
+      height: var(--button-size);
+      width: var(--button-size);
+      border-radius: var(--button-size);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: var(--blue-800);
+      transition: 0.3s;
+    }
+
+    .social-media .social-media__icon:hover {
+      background-color: var(--blue-600);
+    }
+
+    .social-media .social-media__icon img {
+      height: var(--icon-size);
+    }
+
+    /* main styles */
+    .main {
+      width: 100%;
+      padding-top: 80px;
+      padding-bottom: 100px;
+    }
+
+    .main .container {}
+
+    .main__content {}
+
+    .main__title {
+      font-size: 64px;
+      letter-spacing: -0.3px;
+      line-height: 1.1;
+      font-weight: 600;
+
+      color: var(--blue-100);
+    }
+
+    .main__title span {
+      color: var(--blue-500);
+    }
+
+    .main__features {
+      margin-top: 50px;
+
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .main__feature {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      font-size: 32px;
+      line-height: 1.1;
+      color: var(--blue-700);
+    }
+
+    .main .button {
+      margin-top: 50px;
+      width: 100%;
+      max-width: 380px;
+    }
+
+    /* advantages */
+    .advantages {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 100px;
+      background-color: var(--blue-900);
+    }
+
+    .advantages .container {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    .advantages-card {
+      height: 235px;
+
+      padding: 30px 20px;
+      border-radius: 30px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      background-color: var(--blue-800);
+    }
+
+    .advantages-card__title {
+      color: var(--blue-100);
+    }
+
+    .advantages-card__text {
+      font-size: 20px;
+      line-height: 1.1;
+      color: var(--blue-100);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <a href="#" class="logo">
+          <img src="./assets/img/header-logo.svg" alt="">
+        </a>
+
+        <nav class="nav">
+          <a href="#" class="nav__link">Подбор персонала</a>
+          <a href="#" class="nav__link">О нас</a>
+          <a href="#" class="nav__link">Блог</a>
+          <a href="#" class="nav__link">Контакты</a>
+        </nav>
+
+        <div class="header__phone-numbers">
+          <a href="tel:+74993022629">+7 (499) 302-26-29</a>
+          <a href="tel:+74992898872">+7 (499) 289-88-72</a>
+        </div>
+
+        <div class="social-media">
+          <a href="#" class="social-media__icon">
+            <img src="./assets/img/header-phone.svg" alt="">
+          </a>
+          <a href="#" class="social-media__icon">
+            <img src="./assets/img/header-whatsapp.svg" alt="">
+          </a>
+          <a href="#" class="social-media__icon">
+            <img src="./assets/img/header-telegram.svg" alt="">
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="container">
+        <div class="main__content">
+          <h1 class="main__title">
+            <span>Иностранные рабочие для</span><br />
+            вашего бизнеса за 1 месяц
+          </h1>
+
+          <div class="main__features">
+            <div class="main__feature">
+              <img src="./assets/img/main-feature-check.svg" alt="">
+              <h3>Обеспечим персоналом от 10 до 300+ человек</h3>
+            </div>
+            <div class="main__feature">
+              <img src="./assets/img/main-feature-check.svg" alt="">
+              <h3>Всё оформление и миграционное сопровождение возмём на себя</h3>
+            </div>
+          </div>
+
+          <a href="#" class="button button--filled">
+            <span>Рассчитать стоимость подбора</span>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <div class="advantages">
+      <div class="container">
+        <div class="advantages-card">
+          <h3 class="advantages-card__title">Гарантия замены сотрудника за 7 дней</h3>
+          <div class="advantages-card__text">За наш счёт</div>
+        </div>
+        <div class="advantages-card">
+          <h3 class="advantages-card__title">Фиксированная прозрачная стоимость</h3>
+          <div class="advantages-card__text">Без доплат</div>
+        </div>
+        <div class="advantages-card">
+          <h3 class="advantages-card__title">Масштабируемая поставка</h3>
+          <div class="advantages-card__text">Под ваш сезон и загрузку</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
