@@ -329,11 +329,17 @@
       height: 100%;
 
       border: 1px solid var(--blue-100);
+
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
       transition: 0.3s;
     }
 
     .checkbox input:checked+div {
       background-color: var(--blue-100);
+      background-image: url(/assets/img/checkbox-icon.svg);
     }
 
     .tabs {
@@ -1412,7 +1418,13 @@
       --margin: calc(max(0px, 100% - var(--container-size)) / 2 - var(--gap) + var(--container-padding));
 
       width: 100%;
+
       overflow-x: scroll;
+      cursor: grab;
+    }
+
+    .scrolling {
+      cursor: grabbing;
     }
 
     .feedbacks-slider::-webkit-scrollbar {
@@ -1446,6 +1458,8 @@
 
       display: flex;
       flex-direction: column;
+
+      user-select: none;
     }
 
     .feedbacks-card__title {
@@ -1726,7 +1740,6 @@
       line-height: 1.1;
       letter-spacing: -1.2px;
 
-      border-bottom: 3px solid currentColor;
       transition: 0.3s;
     }
 
@@ -2036,12 +2049,12 @@
       </div>
     </section>
 
-    <section class=" feedbacks">
+    <section class="feedbacks">
       <div class="container">
         <h2 class="section__title">Клиенты о работе с нами</h2>
       </div>
 
-      <div class="feedbacks-slider">
+      <div data-scrollable class="feedbacks-slider">
         <div class="feedbacks-slides">
           <div class="card feedbacks-card">
             <h3 class="feedbacks-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h3>
@@ -2342,6 +2355,48 @@
           links[index].classList.add(tabsActiveClass)
           pages[index].classList.add(tabsActiveClass)
         })
+      })
+    })
+
+    // scrollable
+    const scrollables = Array.from(document.querySelectorAll('[data-scrollable]'))
+    const scrollingClass = 'scrolling'
+
+    scrollables.forEach(scrollable => {
+      let startScrollX = 0
+      let startMouseX = 0
+      let isMouseDown = false
+      let isTouching = false
+
+      scrollable.addEventListener('mousedown', (e) => {
+        scrollable.classList.add(scrollingClass)
+
+        startScrollX = scrollable.scrollLeft
+        startMouseX = e.clientX
+
+        isMouseDown = true
+      })
+      scrollable.addEventListener('touchstart', (e) => {
+        isTouching = true
+      })
+
+      window.addEventListener('mousemove', (e) => {
+        if (isTouching) return
+        if (!isMouseDown) return
+
+        const currentX = e.clientX
+        const dx = currentX - startMouseX
+
+        scrollable.scrollTo({ left: startScrollX - dx })
+      })
+
+      window.addEventListener('mouseup', () => {
+        scrollable.classList.remove(scrollingClass)
+        startScrollX = scrollable.scrollLeft
+        isMouseDown = false
+      })
+      window.addEventListener('touchend', () => {
+        isTouching = false
       })
     })
   </script>
