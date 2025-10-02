@@ -956,6 +956,8 @@
 
     .migrants-hiring-card {
       min-height: 400px;
+      position: relative;
+      overflow: hidden;
     }
 
     .migrants-hiring-card:nth-child(1) {
@@ -984,6 +986,17 @@
       font-weight: 400;
       line-height: 1.1;
       color: var(--blue-100);
+    }
+
+    .migrants-hiring-card__image {
+      position: absolute;
+      bottom: 20px;
+      right: 15px;
+    }
+
+    .migrants-hiring-card:last-child .migrants-hiring-card__image {
+      right: 40px;
+      bottom: 40px;
     }
 
     @media (max-width: 1100px) {
@@ -1016,6 +1029,18 @@
         font-size: 18px;
         letter-spacing: -0.7px;
       }
+
+      .migrants-hiring-card__image {
+        max-height: 150px;
+        right: 15px;
+        bottom: 10px;
+      }
+
+      .migrants-hiring-card:last-child .migrants-hiring-card__image {
+        max-height: 180px;
+        right: 30px;
+        bottom: 10px;
+      }
     }
 
     @media (max-width: 600px) {
@@ -1033,6 +1058,18 @@
 
       .migrants-hiring-card__text {
         font-size: 16px;
+      }
+
+      .migrants-hiring-card__image {
+        max-height: 130px;
+        right: 10px;
+        bottom: 10px;
+      }
+
+      .migrants-hiring-card:last-child .migrants-hiring-card__image {
+        max-height: 150px;
+        right: 10px;
+        bottom: 10px;
       }
     }
 
@@ -1843,7 +1880,7 @@
               к кандидатам и особенности условий труда,
               чтобы отбирать только релевантных специалистов
             </div>
-            <img src="" alt="">
+            <img class="migrants-hiring-card__image" src="./assets/img/migrants-card-1.png" alt="">
           </div>
 
           <div class="card migrants-hiring-card">
@@ -1852,7 +1889,7 @@
               Проводим поэтапный отбор, учитываем опыт, навыки
               и рекомендации — поэтому гарантируем сотрудников, которые соответствуют вашим требованиям
             </div>
-            <img src="" alt="">
+            <img class="migrants-hiring-card__image" src="./assets/img/migrants-card-2.png" alt="">
           </div>
 
           <div class="card migrants-hiring-card">
@@ -1862,7 +1899,7 @@
               необходимую информацию
               и сопровождаем в первые недели работы
             </div>
-            <img src="" alt="">
+            <img class="migrants-hiring-card__image" src="./assets/img/migrants-card-3.png" alt="">
           </div>
         </div>
       </div>
