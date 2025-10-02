@@ -2377,6 +2377,7 @@
         isMouseDown = true
       })
       scrollable.addEventListener('touchstart', (e) => {
+        scrollable.classList.add(scrollingClass)
         isTouching = true
       })
 
@@ -2396,6 +2397,7 @@
         isMouseDown = false
       })
       window.addEventListener('touchend', () => {
+        scrollable.classList.remove(scrollingClass)
         isTouching = false
       })
     })
