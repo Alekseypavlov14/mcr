@@ -153,6 +153,37 @@
       letter-spacing: -0.9px;
     }
 
+    .social-media {
+      --button-size: 60px;
+      --icon-size: 30px;
+
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .social-media .social-media__icon {
+      flex: 0 0 var(--button-size);
+      height: var(--button-size);
+      width: var(--button-size);
+      border-radius: var(--button-size);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: var(--blue-800);
+      transition: 0.3s;
+    }
+
+    .social-media .social-media__icon:hover {
+      background-color: var(--blue-600);
+    }
+
+    .social-media .social-media__icon img {
+      height: var(--icon-size);
+    }
+
     .burger-button {
       --height: 20px;
       --ratio: 2.4;
@@ -397,7 +428,7 @@
       border-bottom: 1px solid currentColor;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       h1 {
         font-size: 48px;
         line-height: 1.1;
@@ -580,37 +611,6 @@
       color: var(--blue-400);
     }
 
-    .social-media {
-      --button-size: 60px;
-      --icon-size: 30px;
-
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .social-media .social-media__icon {
-      flex: 0 0 var(--button-size);
-      height: var(--button-size);
-      width: var(--button-size);
-      border-radius: var(--button-size);
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      background-color: var(--blue-800);
-      transition: 0.3s;
-    }
-
-    .social-media .social-media__icon:hover {
-      background-color: var(--blue-600);
-    }
-
-    .social-media .social-media__icon img {
-      height: var(--icon-size);
-    }
-
     .burger-button {
       display: none;
     }
@@ -619,7 +619,7 @@
       display: none;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .header {
         padding: 20px 0px;
       }
@@ -679,8 +679,8 @@
       }
 
       .header .social-media {
-        --button-height: 30px;
-        --icon-height: 15px;
+        --button-size: 30px;
+        --icon-size: 15px;
       }
 
       .header .burger-button {
@@ -694,11 +694,20 @@
       padding-top: 80px;
       padding-bottom: 100px;
       background-color: var(--blue-900);
+      overflow: hidden;
+    }
+
+    .main .container {
+      position: relative;
     }
 
     .main__title {
       font-weight: 600;
       color: var(--blue-100);
+    }
+
+    .main__title br:not(.desktop) {
+      display: none;
     }
 
     .main__title span {
@@ -721,6 +730,11 @@
       font-size: 32px;
       line-height: 1.1;
       color: var(--blue-700);
+      letter-spacing: -1px;
+    }
+
+    .main__feature:last-child {
+      max-width: 540px;
     }
 
     .main .button {
@@ -729,23 +743,76 @@
       max-width: 380px;
     }
 
-    @media (max-width: 992px) {
+    .main__illustration {
+      display: block;
+      position: absolute;
+      left: 660px;
+      top: 50px;
+    }
+
+    .main__illustration:not(.desktop) {
+      display: none;
+    }
+
+    @media (max-width: 1100px) {
       .main {
         padding-top: 60px;
         padding-bottom: 50px;
+      }
+
+      .main__title {
+        padding-right: 65px;
+      }
+
+      .main__title br:not(.tablet) {
+        display: none;
+      }
+
+      .main__title br.tablet {
+        display: block;
       }
 
       .main__features {
         margin-top: 30px;
       }
 
+      .main__feature:last-child {
+        max-width: none;
+      }
+
       .main .button {
         margin-top: 50px;
         max-width: 350px;
       }
+
+      .main__illustration {
+        top: 0px;
+        right: var(--container-padding);
+        left: auto;
+      }
+
+      .main__illustration:not(.tablet) {
+        display: none;
+      }
+
+      .main__illustration.tablet {
+        display: block;
+      }
     }
 
     @media (max-width: 600px) {
+      .main__title {
+        padding-right: 0;
+      }
+
+      .main__title br:not(.mobile) {
+        display: none;
+      }
+
+      .main__title br.mobile {
+        display: block;
+      }
+
       .main__features {
         margin-top: 30px;
       }
@@ -761,6 +828,20 @@
       .main .button {
         width: 100%;
         max-width: 100%;
+      }
+
+      .main__illustration {
+        top: 0px;
+        right: auto;
+        left: calc(var(--container-padding) + 215px);
+      }
+
+      .main__illustration:not(.mobile) {
+        display: none;
+      }
+
+      .main__illustration.mobile {
+        display: block;
       }
     }
 
@@ -797,7 +878,7 @@
       color: var(--blue-100);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .advantages {
         padding-top: 0px;
         padding-bottom: 50px;
@@ -829,6 +910,11 @@
         flex-direction: column;
         gap: 20px;
         overflow: hidden;
+      }
+
+      .advantages-card {
+        min-width: 0px;
+        width: 100%;
       }
 
       .advantages-card__title {
@@ -900,7 +986,7 @@
       color: var(--blue-100);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .migrants-hiring__cards {
         display: grid;
         grid-template-columns: 1fr;
@@ -1021,7 +1107,7 @@
       bottom: -20px;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .search-specialists-fields {
         --card-height: 300px;
 
@@ -1143,7 +1229,7 @@
       width: 100%;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .sign-up .container {
         grid-template-rows: auto auto auto;
         grid-template-columns: 1fr 1fr;
@@ -1234,7 +1320,7 @@
       max-width: 100%;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .reliability {
         padding-top: 50px;
         padding-bottom: 100px;
@@ -1370,7 +1456,7 @@
       font-size: 16px;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .feedbacks .section__title {
         margin-bottom: 30px;
         text-shadow: none;
@@ -1479,7 +1565,7 @@
       color: var(--blue-400);
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .steps {
         padding-top: 50px;
         padding-bottom: 50px;
@@ -1548,7 +1634,7 @@
       margin-top: 30px;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .contact-us__form {
         flex-direction: column;
         align-items: stretch;
@@ -1614,7 +1700,7 @@
       max-width: 280px;
     }
 
-    @media (max-width: 992px) {
+    @media (max-width: 1100px) {
       .footer__phone-numbers a {
         font-size: 36px;
         letter-spacing: -1.1px;
@@ -1698,8 +1784,8 @@
       <div class="container">
         <div class="main__content">
           <h1 class="main__title">
-            <span>Иностранные рабочие для</span><br />
-            вашего бизнеса за 1 месяц
+            <span>Иностранные <br class="mobile" /> рабочие для</span><br class="desktop" />
+            вашего<br class="mobile" />бизнеса за 1 месяц
           </h1>
 
           <div class="main__features">
@@ -1717,6 +1803,10 @@
             <span>Рассчитать стоимость подбора</span>
           </a>
         </div>
+
+        <img class="main__illustration desktop" src="./assets/img/main-image-desktop.svg" alt="">
+        <img class="main__illustration tablet" src="./assets/img/main-image-tablet.svg" alt="">
+        <img class="main__illustration mobile" src="./assets/img/main-image-mobile.svg" alt="">
       </div>
     </main>
 
