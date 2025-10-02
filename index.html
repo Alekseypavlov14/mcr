@@ -965,12 +965,60 @@
 
     .search-specialists-fields-card {
       height: var(--card-height);
+      position: relative;
+      overflow: hidden;
     }
 
     .search-specialists-fields-card__title {
       font-size: 24px;
       font-weight: 600;
-      line-height: 1.1;
+      line-height: 1.05;
+      letter-spacing: -1px;
+    }
+
+    .search-specialists-fields-card__image {
+      position: absolute;
+      display: block;
+    }
+
+    .search-specialists-fields-card:nth-child(1) .search-specialists-fields-card__image {
+      right: -40px;
+      bottom: -10px;
+    }
+
+    .search-specialists-fields-card:nth-child(2) .search-specialists-fields-card__image {
+      right: -45px;
+      bottom: -20px;
+    }
+
+    .search-specialists-fields-card:nth-child(3) .search-specialists-fields-card__image {
+      right: -50px;
+      bottom: -20px;
+    }
+
+    .search-specialists-fields-card:nth-child(4) .search-specialists-fields-card__image {
+      right: -35px;
+      bottom: -10px;
+    }
+
+    .search-specialists-fields-card:nth-child(5) .search-specialists-fields-card__image {
+      right: -40px;
+      bottom: -10px;
+    }
+
+    .search-specialists-fields-card:nth-child(6) .search-specialists-fields-card__image {
+      right: -40px;
+      bottom: -10px;
+    }
+
+    .search-specialists-fields-card:nth-child(7) .search-specialists-fields-card__image {
+      right: -50px;
+      bottom: 0px;
+    }
+
+    .search-specialists-fields-card:nth-child(8) .search-specialists-fields-card__image {
+      right: -75px;
+      bottom: -20px;
     }
 
     @media (max-width: 992px) {
@@ -1010,16 +1058,59 @@
     .sign-up .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto 1fr;
       gap: 20px;
     }
 
     .sign-up-form {
-      grid-column: 1 / 1;
       grid-row: 1 / -1;
+      grid-column: 1 / 1;
 
       border-radius: 30px;
       background-color: #fff;
       padding: 40px 20px 20px 20px;
+    }
+
+    .sign-up .section__title {
+      grid-row: 1 / 1;
+      grid-column: 2 / 2;
+      margin-bottom: 10px;
+    }
+
+    .sign-up .section__subtitle {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.6px;
+      color: var(--blue-100);
+      display: none;
+    }
+
+    .sign-up .section__subtitle span {
+      color: var(--blue-700);
+    }
+
+    .sign-up__illustration {
+      grid-row: 2 / -1;
+      grid-column: 2 / 2;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      position: relative;
+      overflow: hidden;
+      border-radius: 30px;
+    }
+
+    .sign-up__illustration img {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translateX(-50%) translateY(-50%);
+
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
     }
 
     .sign-up-form__title {
@@ -1054,7 +1145,8 @@
 
     @media (max-width: 992px) {
       .sign-up .container {
-        gap: 0px;
+        grid-template-rows: auto auto auto;
+        grid-template-columns: 1fr 1fr;
       }
 
       .sign-up .section__title {
@@ -1062,12 +1154,54 @@
         grid-column: 1 / -1;
       }
 
-      .sign-up-form {
+      .sign-up .section__subtitle {
+        display: block;
+
+        margin-top: 0px;
+        margin-bottom: 30px;
+
         grid-row: 2 / 2;
         grid-column: 1 / -1;
+      }
+
+      .sign-up-form {
+        grid-row: 3 / 3;
+        grid-column: 1 / 2;
 
         background-color: transparent;
         padding: 0;
+      }
+
+      .sign-up__illustration {
+        grid-row: 3 / 3;
+        grid-column: 2 / 2;
+      }
+
+      .sign-up-form {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .sign-up-form__title,
+      .sign-up-form__subtitle {
+        display: none;
+      }
+
+      .sign-up-form__body {
+        margin-top: 0;
+        grid-row: 1 / 1;
+        grid-column: 1 / -1;
+      }
+
+      .sign-up-form__button {
+        margin-top: 20px;
+        grid-row: 2 / 2;
+        grid-column: 1 / -1;
+      }
+
+      .sign-up-form .agreements {
+        grid-row: 3 / 3;
+        grid-column: 1 / -1;
       }
     }
 
@@ -1087,6 +1221,17 @@
 
     .reliability-card {
       height: var(--card-height);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      padding: 0px 10px;
+    }
+
+    .reliability-card img {
+      max-height: 100%;
+      max-width: 100%;
     }
 
     @media (max-width: 992px) {
@@ -1640,28 +1785,36 @@
 
         <div class="search-specialists-fields">
           <div class="card search-specialists-fields-card">
-            <div class="search-specialists-fields-card__title">Швейное производство</div>
+            <div class="search-specialists-fields-card__title">Швейное<br />производство</div>
+            <img class="search-specialists-fields-card__image" src="./assets/img/specialists-field-1.svg" alt="">
           </div>
           <div class="card search-specialists-fields-card">
-            <div class="search-specialists-fields-card__title">Промышленные предприятия</div>
+            <div class="search-specialists-fields-card__title">Промышленные<br />предприятия</div>
+            <img class="search-specialists-fields-card__image" src="./assets/img/specialists-field-2.svg" alt="">
           </div>
           <div class="card search-specialists-fields-card">
-            <div class="search-specialists-fields-card__title">Строительство и ремонт</div>
+            <div class="search-specialists-fields-card__title">Строительство<br />и ремонт</div>
+            <img class="search-specialists-fields-card__image" src="./assets/img/specialists-field-3.svg" alt="">
           </div>
           <div class="card search-specialists-fields-card">
-            <div class="search-specialists-fields-card__title">Складская логистика</div>
+            <div class="search-specialists-fields-card__title">Складская<br />логистика</div>
+            <img class="search-specialists-fields-card__image" src="./assets/img/specialists-field-4.svg" alt="">
           </div>
           <div class="card search-specialists-fields-card">
-            <div class="search-specialists-fields-card__title">Гостиничное дело и туризм</div>
+            <div class="search-specialists-fields-card__title">Гостиничное<br />дело и туризм</div>
+            <img class="search-specialists-fields-card__image" src="./assets/img/specialists-field-5.svg" alt="">
           </div>
           <div class="card search-specialists-fields-card">
-            <div class="search-specialists-fields-card__title">С/X деятельность</div>
+            <div class="search-specialists-fields-card__title">С/X<br />деятельность</div>
+            <img class="search-specialists-fields-card__image" src="./assets/img/specialists-field-6.svg" alt="">
           </div>
           <div class="card search-specialists-fields-card">
-            <div class="search-specialists-fields-card__title">Сервисное обслуживание: клининг, доставка</div>
+            <div class="search-specialists-fields-card__title">Сервисное<br />обслуживание:<br />клининг, доставка</div>
+            <img class="search-specialists-fields-card__image" src="./assets/img/specialists-field-7.svg" alt="">
           </div>
           <div class="card search-specialists-fields-card">
-            <div class="search-specialists-fields-card__title">Транспортная логистика</div>
+            <div class="search-specialists-fields-card__title">Транспортная<br />логистика</div>
+            <img class="search-specialists-fields-card__image" src="./assets/img/specialists-field-8.svg" alt="">
           </div>
         </div>
       </div>
@@ -1692,10 +1845,10 @@
                 <div></div>
               </div>
 
-              <p>
+              <div class="agreement__text">
                 Я соглашаюсь с обработкой персональных данных и ознакомлен с 
                 <a href="https://mkresource.ru/privacy-policy">политикой конфиденциальности</a>
-              </p>
+              </div>
             </label>
           </div>
 
@@ -1707,7 +1860,13 @@
           <span>уже сегодня</span>
         </h2>
 
+        <div class="text section__subtitle">
+          Мы предоставим персонализированное предложение с расчетом по запросу.
+          <span>Наши специалисты свяжутся с вами в течение 24 часов.</span>
+        </div>
+
         <div class="sign-up__illustration">
+          <img src="./assets/img/sign-up-form-illustration.png" width="354" height="335">
         </div>
       </div>
     </section>
@@ -1720,16 +1879,26 @@
         </h2>
 
         <div class="reliability__cards">
-          <div class="card reliability-card"></div>
-          <div class="card reliability-card"></div>
-          <div class="card reliability-card"></div>
-          <div class="card reliability-card"></div>
-          <div class="card reliability-card"></div>
+          <div class="card reliability-card">
+            <img src="./assets/img/companies-1.png" alt="">
+          </div>
+          <div class=" card reliability-card">
+            <img src="./assets/img/companies-2.png" alt="">
+          </div>
+          <div class=" card reliability-card">
+            <img src="./assets/img/companies-3.png" alt="">
+          </div>
+          <div class=" card reliability-card">
+            <img src="./assets/img/companies-4.png" alt="">
+          </div>
+          <div class=" card reliability-card">
+            <img src="./assets/img/companies-5.png" alt="">
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="feedbacks">
+    <section class=" feedbacks">
       <div class="container">
         <h2 class="section__title">Клиенты о работе с нами</h2>
       </div>
@@ -1740,7 +1909,8 @@
             <h3 class="feedbacks-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h3>
             <div class="feedbacks-card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation
               ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
             </div>
             <div class="feedbacks-card__user">
@@ -1758,7 +1928,8 @@
             <h3 class="feedbacks-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h3>
             <div class="feedbacks-card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation
               ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
             </div>
             <div class="feedbacks-card__user">
@@ -1776,7 +1947,8 @@
             <h3 class="feedbacks-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h3>
             <div class="feedbacks-card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation
               ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
             </div>
             <div class="feedbacks-card__user">
@@ -1794,7 +1966,8 @@
             <h3 class="feedbacks-card__title">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do</h3>
             <div class="feedbacks-card__text">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+              exercitation
               ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
             </div>
             <div class="feedbacks-card__user">
