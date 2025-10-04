@@ -106,27 +106,32 @@
       font-size: 18px;
       line-height: 1;
 
-      border: none;
       outline: none;
       cursor: pointer;
 
       background-color: #fff;
+      border: 1px solid #fff;
       color: var(--blue-100);
       transition: 0.3s;
     }
 
     .button:hover {
-      background-color: var(--blue-900);
+      background-color: var(--blue-100);
+      border-color: #fff;
+      color: #fff;
     }
 
     .button--filled {
       background-color: var(--blue-400);
+      border: 1px solid var(--blue-400);
       color: var(--blue-900);
       transition: 0.3s;
     }
 
     .button--filled:hover {
-      background-color: var(--blue-300);
+      background-color: #fff;
+      border-color: var(--blue-400);
+      color: var(--blue-400);
     }
 
     h1 {
@@ -178,7 +183,7 @@
 
     .social-media .social-media__icon:hover {
       background-color: #fff;
-      box-shadow: 0px 2px 3px 0px #0000001A;
+      box-shadow: 0px 1px 5px 0px var(--blue-400);
     }
 
     .social-media .social-media__icon img {
@@ -371,14 +376,23 @@
       justify-content: center;
 
       background-color: var(--blue-800);
+      border: 1px solid var(--blue-800);
       color: var(--blue-100);
 
       font-size: 18px;
       font-weight: 400;
+
+      transition: 0.3s;
+    }
+
+    .tabs__link:hover {
+      background-color: #fff;
+      border-color: var(--blue-400);
     }
 
     .tabs__link.active {
       background-color: var(--blue-400);
+      border-color: var(--blue-400);
       color: #fff;
     }
 
@@ -392,9 +406,7 @@
 
     .field {
       display: block;
-
       border-radius: 100px;
-      padding: 20px 30px;
 
       background-color: var(--blue-800);
       border: 1px solid var(--blue-100);
@@ -408,7 +420,11 @@
     }
 
     .field input {
+      display: block;
       width: 100%;
+
+      padding: 20px 30px;
+      border-radius: 100px;
 
       background-color: transparent;
       border: none;
@@ -437,6 +453,8 @@
       display: flex;
       align-items: center;
       gap: 10px;
+
+      cursor: pointer;
     }
 
     .agreement__text {
@@ -497,7 +515,7 @@
         margin-top: 30px;
       }
 
-      .field {
+      .field input {
         padding: 20px 15px;
       }
 
@@ -560,10 +578,24 @@
     /* header styles */
     .header {
       width: 100%;
+      position: fixed;
+      top: -1px;
+      left: 0;
+
+      background-color: var(--blue-900);
       padding: 20px 0px;
 
-      position: relative;
       z-index: var(--header-z-index);
+
+      box-shadow: 0px 0px 0px transparent;
+      border-bottom: 1px solid transparent;
+
+      transition: 0.3s;
+    }
+
+    .header.scrolling {
+      padding: 10px 0px;
+      box-shadow: 0px 2px 4px var(--blue-400);
     }
 
     .header .container {
@@ -607,10 +639,29 @@
 
       cursor: pointer;
       transition: 0.3s;
+
+      position: relative;
+    }
+
+    .header .nav .nav__link::after {
+      content: '';
+
+      display: block;
+      width: 0;
+      border: 1px solid currentColor;
+      transition: 0.3s;
+
+      position: absolute;
+      bottom: -4px;
+      left: 0;
     }
 
     .header .nav .nav__link:hover {
       color: var(--blue-400);
+    }
+
+    .header .nav .nav__link:hover::after {
+      width: 100%;
     }
 
     .header .header__phone-numbers {
@@ -643,10 +694,6 @@
     }
 
     @media (max-width: 1100px) {
-      .header {
-        padding: 20px 0px;
-      }
-
       .header .logo {
         height: 50px;
       }
@@ -687,6 +734,12 @@
         padding: 10px 0px;
       }
 
+      .header.scrolling {
+        padding: 10px 0px;
+        box-shadow: none;
+        border-bottom: 1px solid var(--blue-400);
+      }
+
       .header .container {
         gap: 10px;
       }
@@ -702,8 +755,8 @@
       }
 
       .header .social-media {
-        --button-size: 30px;
-        --icon-size: 15px;
+        --button-size: 40px;
+        --icon-size: 24px;
       }
 
       .header .burger-button {
@@ -714,7 +767,7 @@
     /* main styles */
     .main {
       width: 100%;
-      padding-top: 80px;
+      padding-top: 180px;
       padding-bottom: 100px;
       background-color: var(--blue-900);
       overflow: hidden;
@@ -779,7 +832,7 @@
 
     @media (max-width: 1100px) {
       .main {
-        padding-top: 60px;
+        padding-top: 150px;
         padding-bottom: 50px;
       }
 
@@ -824,6 +877,10 @@
     }
 
     @media (max-width: 600px) {
+      .main {
+        padding-top: 120px;
+      }
+
       .main__title {
         padding-right: 0;
       }
@@ -1762,7 +1819,7 @@
     }
 
     .footer__phone-numbers a:hover {
-      color: var(--blue-500);
+      color: var(--blue-100);
     }
 
     .footer__logo {
@@ -1819,7 +1876,7 @@
 
 <body>
   <div class="wrapper">
-    <header class="header">
+    <header id="header" class="header">
       <div class="container">
         <a href="#" class="logo">
           <img src="./assets/img/header-logo.svg" alt="">
@@ -1997,13 +2054,13 @@
 
           <div class="sign-up-form__body">
             <div class="field">
-              <input type="text" placeholder="Имя">
+              <input id="sign-up-name" type="text" placeholder="Имя">
             </div>
-            <div class="field">
-              <input type="tel" placeholder="Телефон">
+            <div class="field" data-form-field="tel">
+              <input id="sign-up-phone" type="tel" placeholder="Телефон">
             </div>
-            <div class="field">
-              <input type="email" placeholder="Email">
+            <div class="field" data-form-field="email">
+              <input id="sign-up-email" type="email" placeholder="Email">
             </div>
           </div>
 
@@ -2341,6 +2398,16 @@
   </div>
 
   <script>
+    // header scrolling
+    const header = document.getElementById('header')
+    const headerScrollingClass = 'scrolling'
+    const headerScrollingBreakpoint = 50
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY >= headerScrollingBreakpoint) header.classList.add(headerScrollingClass)
+      else header.classList.remove(headerScrollingClass)
+    })
+
     // burger button 
     const burgerButton = document.getElementById('burger-button')
     const sidebar = document.getElementById('sidebar')
@@ -2373,6 +2440,30 @@
           links[index].classList.add(tabsActiveClass)
           pages[index].classList.add(tabsActiveClass)
         })
+      })
+    })
+
+    // form fields
+    const formFields = Array.from(document.querySelectorAll('[data-form-field]'))
+    const mapFieldTypeToActivePlaceholder = {
+      tel: '+7 (___) ___-__-__',
+      email: 'mail@mail.com',
+    }
+
+    formFields.forEach(field => {
+      const input = field.querySelector('input')
+      if (!input) return
+
+      const defaultPlaceholder = input.getAttribute('placeholder')
+      const type = field.getAttribute('data-form-field')
+
+      const activePlaceholder = mapFieldTypeToActivePlaceholder[type] ?? defaultPlaceholder
+
+      input.addEventListener('focus', () => {
+        input.setAttribute('placeholder', activePlaceholder)
+      })
+      input.addEventListener('blur', () => {
+        input.setAttribute('placeholder', defaultPlaceholder)
       })
     })
 
