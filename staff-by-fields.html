@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="./assets/css/shared.css">
+  <link rel="stylesheet" href="./assets/css/staff-by-fields.css">
   <title>MCR</title>
 </head>
 
@@ -94,6 +95,133 @@
       </div>
     </div>
 
+    <main class="staff-by-fields-hero">
+      <div class="container">
+        <h1 class="staff-by-fields-hero__title">
+          Подбор персонала <br /> <span>по отраслям</span>
+        </h1>
+        <h3 class="staff-by-fields__text">
+          Закрываем вакансии от 10 человек за 1 месяц <br class="desktop" />
+          с полным сопровождением и гарантией результата
+        </h3>
+
+        <a href="#" class="button button--filled">
+          Оставить заявку на подбор
+        </a>
+      </div>
+    </main>
+
+    <section class="section profitability">
+      <div class="container">
+        <h2 class="section__title">
+          Когда выгоден подбор иностранных <br />
+          <span>специалистов по отраслям?</span>
+        </h2>
+      </div>
+
+      <div data-scrollable class="scrollable">
+        <div class="scrollable__content">
+          <div class="card profitability-card">
+            <img src="./assets/img/profitability-card-1.svg" alt="" class="profitability-card__icon">
+            <h3 class="profitability-card__title">Дефицит рабочей силы</h3>
+            <div class="profitability-card__text">
+              Закроем вакантные позиции подходящими сотрудниками из нашей эксклюзивной базы кандидатов из вашей
+              отрасль.
+            </div>
+          </div>
+
+          <div class="card profitability-card">
+            <img src="./assets/img/profitability-card-2.svg" alt="" class="profitability-card__icon">
+            <h3 class="profitability-card__title">Срочная потребность <br />в персонале</h3>
+            <div class="profitability-card__text">
+              Подберем специалистов в минимальные сроки — привоз за 1 месяц.
+            </div>
+          </div>
+
+          <div class="card profitability-card">
+            <img src="./assets/img/profitability-card-3.svg" alt="" class="profitability-card__icon">
+            <h3 class="profitability-card__title">Высокая текучка кадров</h3>
+            <div class="profitability-card__text">
+              Проанализируем причины и предложим стабильных кандидатов с гарантией замены в течение 7 дней.
+            </div>
+          </div>
+
+          <div class="card profitability-card">
+            <img src="./assets/img/profitability-card-4.svg" alt="" class="profitability-card__icon">
+            <h3 class="profitability-card__title">Сложности с документами и&nbsp;адаптацией</h3>
+            <div class="profitability-card__text">
+              Закроем вакантные позиции подходящими сотрудниками из нашей эксклюзивной базы кандидатов из вашей
+              отрасль.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="text profitability__text">
+          Агентство «Миграционный кадровый ресурс» предлагает комплексные решения для отраслей,
+          где требуется надежный и мотивированный персонал.
+          <span>
+            Наши услуги обеспечивают подбор специалистов с учетом
+            специфики вашего бизнеса, минимизируя риски и затраты.
+          </span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sign-up">
+      <div class="container">
+        <!-- Form -->
+        <div class="sign-up-form">
+          <div class="sign-up-form__title">Мы предоставим персонализированное предложение с расчетом по запросу. </div>
+          <div class="sign-up-form__subtitle">Наши специалисты свяжутся с вами в течение 24 часов.</div>
+
+          <div class="sign-up-form__body">
+            <div class="field">
+              <input id="sign-up-name" type="text" placeholder="Имя">
+            </div>
+            <div class="field" data-form-field="tel">
+              <input id="sign-up-phone" type="tel" placeholder="Телефон">
+            </div>
+            <div class="field" data-form-field="email">
+              <input id="sign-up-email" type="email" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="agreements">
+            <label class="agreement" for="privacy-policy-checkbox">
+              <div class="checkbox">
+                <input type="checkbox" id="privacy-policy-checkbox">
+                <div></div>
+              </div>
+
+              <div class="agreement__text">
+                Я соглашаюсь с обработкой персональных данных и ознакомлен с 
+                <a href="https://mkresource.ru/privacy-policy">политикой конфиденциальности</a>
+              </div>
+            </label>
+          </div>
+
+          <button class="sign-up-form__button button button--filled">Получить предложение</butt>
+        </div>
+
+        <!-- Illustration and title -->
+        <h2 class="section__title">
+          Закройте вакансию <br />
+          <span>уже сегодня</span>
+        </h2>
+
+        <div class="text section__subtitle">
+          Мы предоставим персонализированное предложение с расчетом по запросу.
+          <span>Наши специалисты свяжутся с вами в течение 24 часов.</span>
+        </div>
+
+        <div class="sign-up__illustration">
+          <img src="./assets/img/sign-up-form-illustration.png" width="354" height="335">
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
       <div class="container">
         <div class="footer__row">
@@ -128,6 +256,7 @@
 
   <script src="./assets/js/header.js"></script>
   <script src="./assets/js/sidebar.js"></script>
+  <script src="./assets/js/scrollable.js"></script>
 </body>
 
 </html>

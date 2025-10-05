@@ -1,0 +1,70 @@
+.staff-by-fields-hero {
+  width: 100%;
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
+.staff-by-fields-hero .container {
+  position: relative;
+}
+.staff-by-fields-hero__title {
+  font-weight: 600;
+}
+.staff-by-fields-hero__title span {
+  color: var(--blue-400);
+}
+.staff-by-fields__text {
+  margin-top: 30px;
+  color: var(--blue-700);
+}
+.staff-by-fields-hero .button {
+  margin-top: 50px;
+  max-width: 300px;
+}
+
+.profitability {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--blue-400);
+}
+.profitability .section__title {
+  color: #fff;
+}
+.profitability .section__title span {
+  color: var(--blue-500);
+}
+.profitability-card {
+  --card-width: 580px;
+  --card-height: 400px;
+  --icon-size: 100px;
+
+  flex: 0 0 var(--card-width);
+  height: var(--card-height);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  user-select: none;
+}
+.profitability-card__icon {
+  flex: 0 0 100px;
+}
+.profitability-card__title {
+  margin-top: 30px;
+  flex: 1 1 auto;
+
+  font-weight: 600;
+}
+.profitability-card__text {
+  font-size: 20px;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+}
+.profitability__text {
+  margin-top: 50px;
+  font-weight: 600;
+  color: #fff;
+}
+.profitability__text span {
+  color: var(--blue-500);
+}
