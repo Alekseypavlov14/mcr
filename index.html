@@ -628,15 +628,50 @@
       align-items: center;
 
       background-color: var(--blue-800);
-    }
 
-    .header .nav .nav__link {
       font-size: 18px;
       font-weight: 400;
       line-height: 1.1;
       letter-spacing: -0.4px;
       color: var(--blue-100);
+    }
 
+    .header .nav .nav__dropdown {
+      --horizontal-padding: 20px;
+
+      position: relative;
+      cursor: pointer;
+    }
+
+    .header .nav .nav__dropdown-body {
+      width: calc(100% + 2 * var(--horizontal-padding));
+      position: absolute;
+      top: 100%;
+      left: calc(0px - var(--horizontal-padding));
+
+      padding: 30px var(--horizontal-padding) 20px var(--horizontal-padding);
+      background-color: var(--blue-800);
+      border-radius: var(--horizontal-padding);
+
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 20px;
+
+      max-height: 100dvh;
+      transition: 0.3s;
+
+      overflow: hidden;
+    }
+
+    .header .nav .nav__dropdown:not(:hover) .nav__dropdown-body {
+      max-height: 0dvh;
+      padding-top: 0px;
+      padding-bottom: 0px;
+      opacity: 0;
+    }
+
+    .header .nav .nav__link {
       cursor: pointer;
       transition: 0.3s;
 
@@ -1920,7 +1955,15 @@
         </a>
 
         <nav class="nav">
-          <a href="#" class="nav__link">Подбор персонала</a>
+          <div class="nav__dropdown">
+            <div class="nav__dropdown-label">Подбор персонал</div>
+            <div class="nav__dropdown-body">
+              <a href="#" class="nav__link">Страница 1</a>
+              <a href="#" class="nav__link">Страница 2</a>
+              <a href="#" class="nav__link">Страница 3</a>
+              <a href="#" class="nav__link">Страница 4</a>
+            </div>
+          </div>
           <a href="#" class="nav__link">О нас</a>
           <a href="#" class="nav__link">Блог</a>
           <a href="#" class="nav__link">Контакты</a>
