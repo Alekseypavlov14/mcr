@@ -1,3 +1,4 @@
+/* staff hero */
 .staff-by-fields-hero {
   width: 100%;
   padding-top: 180px;
@@ -21,6 +22,7 @@
   max-width: 300px;
 }
 
+/* profitability */
 .profitability {
   padding-top: 50px;
   padding-bottom: 50px;
@@ -67,4 +69,71 @@
 }
 .profitability__text span {
   color: var(--blue-500);
+}
+
+/* staff hiring steps */
+.staff-hiring-steps {
+  padding-top: 150px;
+  padding-bottom: 100px;
+}
+.staff-hiring-steps__grid {
+  --first-line-height: 400px;
+  --second-line-height: 235px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: var(--first-line-height) var(--second-line-height);
+  gap: 20px;
+}
+.staff-hiring-steps-card {
+  position: relative;
+  overflow: hidden;
+
+  color: var(--blue-100);
+}
+.staff-hiring-steps-card.filled {
+  color: #fff;
+}
+.staff-hiring-steps-card:last-child {
+  grid-column: 2 / -1;
+}
+.staff-hiring-steps-card__title {
+  font-weight: 600;
+}
+.staff-hiring-steps-card__text {
+  margin-top: 30px;
+  font-size: 20px;
+}
+.staff-hiring-steps-card__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.staff-hiring-steps-card:nth-child(1) .staff-hiring-steps-card__image {
+  bottom: 0px;
+  right: 20px;
+}
+.staff-hiring-steps-card:nth-child(2) .staff-hiring-steps-card__image {
+  bottom: 10px;
+  right: 20px;
+}
+.staff-hiring-steps-card:nth-child(3) .staff-hiring-steps-card__image {
+  bottom: 14px;
+  right: 36px;
+}
+.staff-hiring-steps-card:nth-child(4) {
+  background-image: url('../img/staff-hiring-steps-4.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.staff-hiring-steps-card:nth-child(5) .staff-hiring-steps-card__image {
+  bottom: 10px;
+  right: 24px;
+}
+
+/* sign up */
+.staff-sign-up {
+  padding-top: 50px;
+  padding-bottom: 150px;
 }
