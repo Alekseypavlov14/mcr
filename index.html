@@ -647,13 +647,14 @@
       content: '';
 
       display: block;
-      width: 0;
-      border: 1px solid currentColor;
-      transition: 0.3s;
-
       position: absolute;
       bottom: -4px;
       left: 0;
+
+      width: 0;
+      border: 1px solid currentColor;
+      opacity: 0;
+      transition: 0.3s;
     }
 
     .header .nav .nav__link:hover {
@@ -662,6 +663,7 @@
 
     .header .nav .nav__link:hover::after {
       width: 100%;
+      opacity: 1;
     }
 
     .header .header__phone-numbers {
@@ -745,9 +747,16 @@
       }
 
       .header .logo {
-        height: 30px;
-
+        height: 40px;
         flex: 1 1 auto;
+      }
+
+      .header .logo img {
+        width: 44px;
+        height: 100%;
+
+        object-fit: cover;
+        object-position: 0% 0%;
       }
 
       .header .header__phone-numbers {
@@ -878,7 +887,7 @@
 
     @media (max-width: 600px) {
       .main {
-        padding-top: 120px;
+        padding-top: 100px;
       }
 
       .main__title {
@@ -921,6 +930,24 @@
       }
 
       .main__illustration.mobile {
+        display: block;
+      }
+    }
+
+    @media (max-width: 350px) {
+      .main__title br:not(.mobile-small) {
+        display: none;
+      }
+
+      .main__title br.mobile-small {
+        display: block;
+      }
+
+      .main__illustration:not(.mobile-small) {
+        display: none;
+      }
+
+      .main__illustration.mobile-small {
         display: block;
       }
     }
@@ -1815,6 +1842,8 @@
       line-height: 1.1;
       letter-spacing: -1.2px;
 
+      border-bottom: 0.05em solid currentColor;
+
       transition: 0.3s;
     }
 
@@ -1856,6 +1885,14 @@
     }
 
     @media (max-width: 600px) {
+      .footer__logo {
+        height: 30px;
+      }
+
+      .footer__row {
+        align-items: center;
+      }
+
       .footer__phone-numbers a {
         font-size: 20px;
         letter-spacing: -0.5px;
@@ -1920,8 +1957,8 @@
       <div class="container">
         <div class="main__content">
           <h1 class="main__title">
-            <span>Иностранные <br class="mobile" /> рабочие для</span><br class="desktop" />
-            вашего<br class="mobile" /> бизнеса за 1 месяц
+            <span>Иностранные <br class="mobile mobile-small" /> рабочие для</span> <br class="mobile-small">
+            <br class="desktop" /> вашего <br class="mobile" /> бизнеса <br class="mobile-small"> за 1 месяц
           </h1>
 
           <div class="main__features">
@@ -1943,6 +1980,7 @@
         <img class="main__illustration desktop" src="./assets/img/main-image-desktop.svg" alt="">
         <img class="main__illustration tablet" src="./assets/img/main-image-tablet.svg" alt="">
         <img class="main__illustration mobile" src="./assets/img/main-image-mobile.svg" alt="">
+        <img class="main__illustration mobile-small" src="./assets/img/main-image-mobile-small.svg" alt="">
       </div>
     </main>
 
