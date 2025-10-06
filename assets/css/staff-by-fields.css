@@ -49,7 +49,9 @@
   user-select: none;
 }
 .profitability-card__icon {
-  flex: 0 0 100px;
+  display: block;
+  height: var(--icon-size);
+  flex: 0 0 var(--icon-size);
 }
 .profitability-card__title {
   margin-top: 30px;
@@ -71,6 +73,9 @@
   color: var(--blue-500);
 }
 @media (max-width: 1100px) {
+  .profitability-scrollable {
+    overflow: unset;
+  }
   .profitability-scrollable .scrollable__content {
     padding: 0px var(--container-padding);
 
@@ -90,6 +95,25 @@
   }
   .profitability__text {
     font-size: 20px;
+  }
+}
+@media (max-width: 600px) {
+  .profitability-scrollable .scrollable__content {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .profitability-card {
+    --card-width: 100%;
+    --card-height: 250px;
+    --icon-size: 50px;
+
+    width: 100%;
+  }
+  .profitability-card__text {
+    font-size: 16px;
+  }
+  .profitability__text {
+    font-size: 16px;
   }
 }
 
@@ -226,6 +250,61 @@
     margin-top: 30px;
   }
 }
+@media (max-width: 600px) {
+  .staff-hiring-fields .slider {
+    display: flex;
+    gap: 20px;
+
+    overflow-x: scroll;
+    padding-bottom: 5px;
+  }
+  .staff-hiring-fields .slider::-webkit-scrollbar {
+    display: none;
+  }
+  .staff-hiring-fields .slider__slides {
+    display: contents;
+  }
+  .staff-hiring-fields__grid {
+    height: 250px;
+    display: flex;
+  }
+  .staff-hiring-fields .slider__nav {
+    display: none;
+  }
+  .staff-hiring-fields-card {
+    --icon-size: 40px;
+
+    flex: 0 0 300px;
+  }
+  .staff-hiring-fields-card__icon img {
+    max-height: 30px;
+  }
+  .staff-hiring-fields-card__title {
+    font-size: 20px;
+  }
+  .staff-hiring-fields-card__text {
+    margin-top: 20px;
+    font-size: 16px;
+  }
+  .staff-hiring-fields-card__button {
+    width: 100%;
+    padding: 15px;
+  }
+}
+@media (max-width: 350px) {
+  .staff-hiring-fields .slider {
+    gap: 10px;
+  }
+  .staff-hiring-fields__grid {
+    gap: 10px;
+  }
+  .staff-hiring-fields-card {
+    flex: 0 0 270px;
+  }
+  .staff-hiring-fields-card__text {
+    font-size: 14px;
+  }
+}
  
 /* staff experience */
 .staff-experience .container {
@@ -292,12 +371,27 @@
   height: 350px;
   position: relative;
 
+  width: 100%;
+  margin: 0 auto;
+
   display: flex;
   align-items: center;
   justify-content: center;
 }
 .staff-hiring-advantages-widget__line {
   width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.staff-hiring-advantages-widget__line img {
+  width: 100%;
+}
+.staff-hiring-advantages-widget__line img:not(.desktop) {
+  display: none;
+}
+.staff-hiring-advantages-widget__line img.desktop {
+  display: block;
 }
 .staff-hiring-advantages-widget__block {
   position: absolute;
@@ -340,6 +434,107 @@
   line-height: 1.1;
   letter-spacing: -1px;
   color: var(--blue-500);
+}
+@media (max-width: 1100px) {
+  .staff-hiring-advantages {
+    padding-top: 50px;
+    padding-bottom: 100px;
+  }
+  .staff-hiring-advantages-widget {
+    margin-top: 120px;
+    height: auto;
+    max-width: 600px;
+  }
+  .staff-hiring-advantages-widget__line img:not(.tablet) {
+    display: none;
+  }
+  .staff-hiring-advantages-widget__line img.tablet {
+    display: block;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(1) {
+    left: 0%;
+    top: -20%;
+    max-width: 220px;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(2) {
+    left: auto;
+    bottom: auto;
+    right: 0;
+    top: -13%;
+    max-width: 120px;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(3) {
+    left: auto;
+    bottom: auto;
+    top: 31%;
+    right: 7%;
+    max-width: 150px;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(4) {
+    top: auto;
+    bottom: 24%;
+    left: 12%;
+    max-width: 280px;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(5) {
+    top: auto;
+    left: auto;
+    bottom: -12%;
+    right: 0;
+  }
+  .staff-hiring-advantages-widget__block-title {
+    font-size: 20px;
+  }
+  .staff-hiring-advantages-widget__block-text {
+    display: none;
+  }
+}
+@media (max-width: 600px) {
+  .staff-hiring-advantages-widget {
+    margin-top: 80px;
+  }
+  .staff-hiring-advantages-widget__line img:not(.mobile) {
+    display: none;
+  }
+  .staff-hiring-advantages-widget__line img.mobile {
+    display: block;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(1) {
+    left: 0%;
+    top: 20%;
+    max-width: 130px;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(2) {
+    left: auto;
+    bottom: auto;
+    right: 0;
+    top: -13%;
+    max-width: 100px;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(3) {
+    left: auto;
+    bottom: auto;
+    top: 33%;
+    right: 14%;
+    max-width: 90px;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(4) {
+    top: auto;
+    bottom: 24%;
+    left: 15%;
+  }
+  .staff-hiring-advantages-widget__block:nth-child(5) {
+    top: auto;
+    left: auto;
+    bottom: -12%;
+    right: 0;
+  }
+  .staff-hiring-advantages-widget__block-title {
+    font-size: 16px;
+  }
+  .staff-hiring-advantages-widget__block-text {
+    display: none;
+  }
 }
 
 /* staff hiring steps */
@@ -440,6 +635,30 @@
   .staff-hiring-steps-card:nth-child(5) .staff-hiring-steps-card__image {
     bottom: 24px;
     right: 24px;
+  }
+}
+@media (max-width: 600px) {
+  .staff-hiring-steps {
+    padding-top: 50px;
+  }
+  .staff-hiring-steps__grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 330px);
+  }
+  .staff-hiring-steps-card__text {
+    margin-top: 30px;
+    font-size: 16px;
+  }
+  .staff-hiring-steps-card__image {
+    max-height: 200px;
+  }
+  .staff-hiring-steps-card:nth-child(4) {
+    background-position: 100% 80%;
+  }
+  .staff-hiring-steps-card:nth-child(5) .staff-hiring-steps-card__image {
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 10px;
   }
 }
 
