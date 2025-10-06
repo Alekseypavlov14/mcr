@@ -995,6 +995,7 @@ h3 {
 
 /* slider */
 .slider {
+  --index: 0;
   --gap: 20px;
 
   width: 100%;
@@ -1003,6 +1004,9 @@ h3 {
 .slider__slides {
   display: flex;
   gap: var(--gap);
+
+  transform: translateX(calc(0px - (100% + var(--gap)) * var(--index)));
+  transition: 0.3s;
 }
 .slide {
   flex: 0 0 100%;
