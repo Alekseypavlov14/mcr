@@ -70,6 +70,28 @@
 .profitability__text span {
   color: var(--blue-500);
 }
+@media (max-width: 1100px) {
+  .profitability-scrollable .scrollable__content {
+    padding: 0px var(--container-padding);
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .profitability-scrollable .scrollable__content::before,
+  .profitability-scrollable .scrollable__content::after {
+    display: none;
+  }
+  .profitability-card {
+    --card-width: auto;
+    --card-height: 370px;
+  }
+  .profitability-card__text {
+    font-size: 18px;
+  }
+  .profitability__text {
+    font-size: 20px;
+  }
+}
 
 /* hiring fields */
 .staff-hiring-fields {
@@ -186,6 +208,9 @@
     grid-row: 3 / 3;
     grid-column: 1 / -1;
   }
+  .staff-hiring-fields-card__title {
+    font-size: 24px;
+  }
   .staff-hiring-fields-card__text {
     margin-top: 20px;
 
@@ -239,6 +264,9 @@
   }
   .staff-experience__title {
     font-size: 36px;
+  }
+  .staff-experience__text {
+    margin-top: 20px;
   }
   .staff-experience__logos img {
     max-height: 80px;
@@ -374,9 +402,56 @@
   bottom: 10px;
   right: 24px;
 }
+@media (max-width: 1100px) {
+  .staff-hiring-steps {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+  .staff-hiring-steps__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 350px 350px 235px;
+  }
+  .staff-hiring-steps-card:last-child {
+    grid-column: 1 / -1;
+  }
+  .staff-hiring-steps-card__text {
+    margin-top: 20px;
+    font-size: 18px;
+  }
+  .staff-hiring-steps-card:nth-child(1) .staff-hiring-steps-card__image {
+    bottom: 0px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .staff-hiring-steps-card:nth-child(2) .staff-hiring-steps-card__image {
+    bottom: 10px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .staff-hiring-steps-card:nth-child(3) .staff-hiring-steps-card__image {
+    max-height: 170px;
+    bottom: 14px;
+    right: 50%;
+    transform: translateX(50%);
+  }
+  .staff-hiring-steps-card:nth-child(4) {
+    background-position: 100% 80%;
+  }
+  .staff-hiring-steps-card:nth-child(5) .staff-hiring-steps-card__image {
+    bottom: 24px;
+    right: 24px;
+  }
+}
 
 /* sign up */
 .staff-sign-up {
   padding-top: 50px;
   padding-bottom: 150px;
 }
+@media (max-width: 1100px) {
+  .staff-sign-up {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #fff;
+  }
+} 
