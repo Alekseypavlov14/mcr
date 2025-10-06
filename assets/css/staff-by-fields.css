@@ -157,7 +157,51 @@
 .staff-hiring-fields__text span {
   color: var(--blue-700);
 }
+@media (max-width: 1100px) {
+  .staff-hiring-fields {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .staff-hiring-fields__grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 305px 305px 235px;
+  }
+  .staff-hiring-fields-card:nth-child(1) {
+    grid-row: 1 / 1;
+    grid-column: 1 / 2;
+  }
+  .staff-hiring-fields-card:nth-child(2) {
+    grid-row: 1 / 1;
+    grid-column: 2 / 3;
+  }
+  .staff-hiring-fields-card:nth-child(3) {
+    grid-row: 2 / 2;
+    grid-column: 1 / 2;
+  }
+  .staff-hiring-fields-card:nth-child(4) {
+    grid-row: 2 / 2;
+    grid-column: 2 / 3;
+  }
+  .staff-hiring-fields-card:nth-child(5) {
+    grid-row: 3 / 3;
+    grid-column: 1 / -1;
+  }
+  .staff-hiring-fields-card__text {
+    margin-top: 20px;
 
+    font-size: 18px;
+    letter-spacing: -0.6px;
+    line-height: 1.1;
+  }
+  .staff-hiring-fields-card__button {
+    width: 100%;
+    max-width: 220px;
+  }
+  .staff-hiring-fields__text {
+    margin-top: 30px;
+  }
+}
+ 
 /* staff experience */
 .staff-experience .container {
   display: flex;
@@ -186,6 +230,19 @@
 .staff-experience__logos img {
   display: block;
   max-height: 150px;
+}
+@media (max-width: 1100px) {
+  .staff-experience .container {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 50px;
+  }
+  .staff-experience__title {
+    font-size: 36px;
+  }
+  .staff-experience__logos img {
+    max-height: 80px;
+  }
 }
 
 /* staff hiring advantages */
