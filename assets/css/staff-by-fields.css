@@ -3,6 +3,7 @@
   width: 100%;
   padding-top: 180px;
   padding-bottom: 100px;
+  overflow: hidden;
 }
 .staff-by-fields-hero .container {
   position: relative;
@@ -13,13 +14,85 @@
 .staff-by-fields-hero__title span {
   color: var(--blue-400);
 }
-.staff-by-fields__text {
+.staff-by-fields-hero__text {
   margin-top: 30px;
   color: var(--blue-700);
+}
+.staff-by-fields-hero__text br:not(.desktop) {
+  display: none;
+}
+.staff-by-fields-hero__title br.desktop {
+  display: block;
 }
 .staff-by-fields-hero .button {
   margin-top: 50px;
   max-width: 300px;
+}
+.staff-by-fields-hero__illustration {
+  position: absolute;
+  left: min(60%, 730px);
+  top: -30px;
+}
+.staff-by-fields-hero__illustration img:not(.desktop) {
+  display: none;
+}
+.staff-by-fields-hero__illustration img.desktop {
+  display: block;
+}
+@media (max-width: 1100px) {
+  .staff-by-fields-hero {
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+  .staff-by-fields-hero__text {
+    margin-top: 30px;
+    max-width: 520px;
+  }
+  .staff-by-fields-hero__text br:not(.tablet) {
+    display: none;
+  }
+  .staff-by-fields-hero__title br.tablet {
+    display: block;
+  }
+  .staff-by-fields-hero__illustration {
+    top: 0;
+    left: min(66%, 500px);
+  }
+  .staff-by-fields-hero__illustration img:not(.tablet) {
+    display: none;
+  }
+  .staff-by-fields-hero__illustration img.tablet {
+    display: block;
+  }
+}
+@media (max-width: 600px) {
+  .staff-by-fields-hero {
+    padding-top: 100px;
+    padding-bottom: 300px;
+  }
+  .staff-by-fields-hero__text br:not(.mobile) {
+    display: none;
+  }
+  .staff-by-fields-hero__text br.mobile {
+    display: block;
+  }
+  .staff-by-fields-hero .button {
+    margin-top: 30px;
+    width: 100%;
+    max-width: none;
+    padding: 15px;
+  }
+  .staff-by-fields-hero__illustration {
+    top: calc(100% + 20px);
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .staff-by-fields-hero__illustration img:not(.tablet) {
+    display: none;
+  }
+  .staff-by-fields-hero__illustration img.tablet {
+    display: block;
+  }
 }
 
 /* profitability */
