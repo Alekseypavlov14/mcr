@@ -158,6 +158,105 @@
   color: var(--blue-700);
 }
 
+/* staff experience */
+.staff-experience .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.staff-experience__title {
+  font-size: 64px;
+  font-weight: 600;
+  letter-spacing: -3px;
+  line-height: 1.1;
+}
+.staff-experience__text {
+  margin-top: 30px;
+  max-width: 520px;
+
+  font-weight: 600;
+  color: var(--blue-400);
+}
+.staff-experience__logos {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.staff-experience__logos img {
+  display: block;
+  max-height: 150px;
+}
+
+/* staff hiring advantages */
+.staff-hiring-advantages {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--blue-400);
+}
+.staff-hiring-advantages .section__title {
+  color: #fff;
+}
+.staff-hiring-advantages .section__title span {
+  color: var(--blue-500);
+}
+.staff-hiring-advantages-widget {
+  --point-size: 64px;
+  --blocks-amount: 5;
+
+  height: 350px;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.staff-hiring-advantages-widget__line {
+  width: 100%;
+}
+.staff-hiring-advantages-widget__block {
+  position: absolute;
+  left: calc((100% - var(--point-size)) / (var(--blocks-amount) - 1) * var(--index));
+}
+.staff-hiring-advantages-widget__block:nth-child(odd) {
+  bottom: 0;
+}
+.staff-hiring-advantages-widget__block:nth-child(even) {
+  top: 0;
+}
+.staff-hiring-advantages-widget__block:last-child {
+  left: auto;
+  right: 0;
+}
+.staff-hiring-advantages-widget__block:nth-child(1) {
+  max-width: 390px;
+}
+.staff-hiring-advantages-widget__block:nth-child(2) {
+  max-width: 300px;
+}
+.staff-hiring-advantages-widget__block:nth-child(3) {
+  max-width: 290px;
+}
+.staff-hiring-advantages-widget__block:nth-child(4) {
+  max-width: 330px;
+}
+.staff-hiring-advantages-widget__block:nth-child(5) {
+  max-width: 200px;
+}
+.staff-hiring-advantages-widget__block-title {
+  font-size: 24px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: #fff;
+}
+.staff-hiring-advantages-widget__block-text {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: -1px;
+  color: var(--blue-500);
+}
+
 /* staff hiring steps */
 .staff-hiring-steps {
   padding-top: 150px;
