@@ -758,6 +758,19 @@ h3 {
 
   padding: var(--vertical-padding) 0px;
   font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.sidebar__nav-dropdown-arrow {
+  height: 24px;
+  display: block;
+  transform-origin: center;
+  transition: 0.3s;
+}
+.sidebar__nav-dropdown.opened .sidebar__nav-dropdown-arrow {
+  transform: rotateZ(90deg);
 }
 .sidebar__nav-dropdown-body {
   width: 100%;

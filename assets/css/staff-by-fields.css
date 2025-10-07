@@ -335,6 +335,8 @@
     gap: 20px;
 
     overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+
     padding-bottom: 5px;
   }
   .staff-hiring-fields .slider::-webkit-scrollbar {
@@ -354,6 +356,7 @@
     --icon-size: 40px;
 
     flex: 0 0 300px;
+    scroll-snap-align: start;
   }
   .staff-hiring-fields-card__icon img {
     max-height: 30px;
@@ -415,6 +418,9 @@
   max-height: 150px;
 }
 @media (max-width: 1100px) {
+  .staff-experience {
+    display: none;
+  }
   .staff-experience .container {
     align-items: flex-start;
     flex-direction: column;
@@ -638,6 +644,9 @@
 }
 .staff-hiring-steps-card.filled {
   color: #fff;
+}
+.staff-hiring-steps-card.filled:hover {
+  opacity: 0.8;
 }
 .staff-hiring-steps-card:last-child {
   grid-column: 2 / -1;
