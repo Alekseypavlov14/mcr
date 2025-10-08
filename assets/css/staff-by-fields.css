@@ -643,10 +643,11 @@
   color: var(--blue-100);
 }
 .staff-hiring-steps-card.filled {
+  background-color: var(--blue-400);
   color: #fff;
 }
 .staff-hiring-steps-card.filled:hover {
-  opacity: 0.8;
+  background-color: var(--blue-300);
 }
 .staff-hiring-steps-card:last-child {
   grid-column: 2 / -1;
