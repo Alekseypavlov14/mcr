@@ -181,13 +181,17 @@
   }
   .advantages .container {
     padding-bottom: 5px;
+
     overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: var(--container-padding);
   }
   .advantages .container::-webkit-scrollbar {
     display: none;
   }
   .advantages-card {
     min-width: 350px;
+    scroll-snap-align: start;
   }
   .advantages-card__text {
     font-size: 18px;
