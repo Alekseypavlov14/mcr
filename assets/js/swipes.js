@@ -2,18 +2,16 @@
 // direction: 'top' | 'bottom' | 'left' | 'right'
 const SWIPE_MIN_DISTANCE = 30
 const SWIPE_DIRECTION_COEFFICIENT = 1.5
+const TOUCHPAD_DISTANCE_MULTIPLIER = 10
 
 function onSwipe(element, direction, callback) {
   let startX = 0
   let startY = 0
-  let currentX = 0
-  let currentY = 0
+  let dx = 0
+  let dy = 0
   let isDown = false
   
   function handler() {
-    const dx = currentX - startX
-    const dy = currentY - startY
-
     const distance = Math.sqrt(dx ** 2 + dy ** 2)
 
     if (distance >= SWIPE_MIN_DISTANCE && isCorrectDirection(direction, dx, dy)) callback() 
@@ -27,8 +25,8 @@ function onSwipe(element, direction, callback) {
   element.addEventListener('mousemove', (e) => {
     if (!isDown) return
 
-    currentX = e.clientX
-    currentY = e.clientY
+    dx = e.clientX - startX
+    dy = e.clientY - startY
   })
   element.addEventListener('mouseup', () => {
     handler()
@@ -43,12 +41,19 @@ function onSwipe(element, direction, callback) {
   element.addEventListener('touchmove', (e) => {
     if (!isDown) return
 
-    currentX = e.touches[0].clientX
-    currentY = e.touches[0].clientY
+    dx = e.touches[0].clientX - startX
+    dy = e.touches[0].clientY - startY
   })
   element.addEventListener('touchend', (e) => {
     handler()
     isDown = false
+  })
+
+  window.addEventListener('wheel', (e) => {
+    dx = -e.deltaX
+    dy = -e.deltaY
+
+    handler()
   })
 
   function isCorrectDirection(direction, dx, dy) {
