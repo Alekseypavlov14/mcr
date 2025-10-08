@@ -1044,6 +1044,7 @@ h3 {
 }
 .slide {
   flex: 0 0 100%;
+  user-select: none;
 }
 .slider__nav {
   --link-size: 30px;
