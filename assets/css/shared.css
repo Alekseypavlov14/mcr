@@ -833,8 +833,9 @@ h3 {
 
 /* scrollable */
 .scrollable {
-  --gap: 20px;
   --margin: calc(max(0px, (100% - var(--container-size))) / 2 + var(--container-padding));
+  --item-width: 500px;
+  --gap: 20px;
 
   width: 100%;
   padding-bottom: 5px;
@@ -848,12 +849,15 @@ h3 {
 .scrolling {
   cursor: grabbing;
 }
+.mouse-scrolling {
+  scroll-snap-type: none;
+}
 .scrollable::-webkit-scrollbar {
   display: none;
 }
 .scrollable__content {
   display: flex;
-  gap: 20px;
+  gap: var(--gap);
 }
 .scrollable__content::before,
 .scrollable__content::after {
@@ -866,7 +870,11 @@ h3 {
   flex: 0 0 var(--margin);
   min-width: 1px;
 }
+.scrollable__content::after {
+  flex: 0 0 calc(var(--item-width) / 2);
+}
 .scrollable__item {
+  flex: 0 0 var(--item-width);
   scroll-margin: var(--margin);
   scroll-snap-align: start;
 }

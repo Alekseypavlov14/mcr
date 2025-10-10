@@ -113,13 +113,15 @@
 .profitability .section__title span {
   color: var(--blue-500);
 }
+.profitability-scrollable {
+  --item-width: 580px;
+  --item-height: 400px;
+}
 .profitability-card {
-  --card-width: 580px;
-  --card-height: 400px;
   --icon-size: 100px;
 
-  flex: 0 0 var(--card-width);
-  height: var(--card-height);
+  flex: 0 0 var(--item-width);
+  height: var(--item-height);
 
   display: flex;
   flex-direction: column;
@@ -154,6 +156,9 @@
 @media (max-width: 1100px) {
   .profitability-scrollable {
     overflow: unset;
+
+    --item-width: auto;
+    --item-height: 370px;
   }
   .profitability-scrollable .scrollable__content {
     padding: 0px var(--container-padding);
@@ -164,10 +169,6 @@
   .profitability-scrollable .scrollable__content::before,
   .profitability-scrollable .scrollable__content::after {
     display: none;
-  }
-  .profitability-card {
-    --card-width: auto;
-    --card-height: 370px;
   }
   .profitability-card__text {
     font-size: 18px;
@@ -182,8 +183,8 @@
     padding: 0;
   }
   .profitability-card {
-    --card-width: 100%;
-    --card-height: 250px;
+    --item-width: 100%;
+    --item-height: 250px;
     --icon-size: 50px;
 
     width: 100%;
