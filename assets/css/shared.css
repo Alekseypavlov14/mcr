@@ -590,8 +590,8 @@ h3 {
   left: calc(0px - var(--horizontal-padding));
 
   padding: 30px var(--horizontal-padding) 20px var(--horizontal-padding);
+  border-radius: 0px 0px var(--horizontal-padding) var(--horizontal-padding);
   background-color: var(--blue-800);
-  border-radius: var(--horizontal-padding);
 
   display: flex;
   align-items: flex-start;
