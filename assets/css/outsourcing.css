@@ -1,0 +1,421 @@
+.outsourcing-hero {
+  padding-top: 180px;
+  padding-bottom: 100px;
+}
+.outsourcing-hero__title {
+  font-weight: 600;
+}
+.outsourcing-hero__subtitle {
+  margin-top: 30px;
+  color: var(--blue-700);
+}
+.outsourcing-hero__action {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.outsourcing-hero .button {
+  flex: 0 0 380px;
+}
+.outsourcing-hero__action-message {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  color: var(--blue-100);
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+}
+.outsourcing-hero__cards {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.outsourcing-hero-card {
+  padding: 30px;
+}
+.outsourcing-hero-card__title {
+  font-weight: 600;
+}
+.outsourcing-hero__text {
+  margin-top: 50px;
+  font-weight: 600;
+}
+.outsourcing-hero__text span {
+  color: var(--blue-400);
+}
+@media (max-width: 1100px) {
+  .outsourcing-hero {
+    padding-top: 150px;
+    padding-bottom: 50px;
+  }
+  .outsourcing-hero__action .button {
+    flex: 0 0 350px;
+  }
+  .outsourcing-hero__action-message {
+    max-width: 320px;
+
+    font-size: 18px;
+    letter-spacing: -0.6px;
+    text-align: center;
+  }
+  .outsourcing-hero-card {
+    padding: 20px;
+  }
+  .outsourcing-hero-card__title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+  }
+  .outsourcing-hero__text {
+    font-size: 20px;
+  }
+} 
+
+.outsourcing-service {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--blue-400);
+}
+.outsourcing-service .section__title {
+  color: #fff;
+}
+.outsourcing-service .section__title span {
+  color: var(--blue-500);
+}
+.outsourcing-service__grid {
+  --first-line-height: 400px;
+  --second-line-height: 235px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: var(--first-line-height) var(--second-line-height);
+  gap: 20px;
+}
+.outsourcing-service-card {
+  position: relative;
+  overflow: hidden;
+
+  color: var(--blue-100);
+}
+.outsourcing-service-card:last-child {
+  grid-column: 2 / -1;
+}
+.outsourcing-service-card__title {
+  position: relative;
+  z-index: 1;
+
+  font-weight: 600;
+}
+.outsourcing-service-card__text {
+  position: relative;
+  z-index: 1;
+
+  margin-top: 30px;
+  font-size: 20px;
+}
+.outsourcing-service-card__image {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+.outsourcing-service-card:nth-child(1) .outsourcing-service-card__image {
+  bottom: 0px;
+  right: 10px;
+}
+.outsourcing-service-card:nth-child(2) .outsourcing-service-card__image {
+  bottom: 5px;
+  right: 10px;
+}
+.outsourcing-service-card:nth-child(3) .outsourcing-service-card__image {
+  bottom: 5px;
+  right: 10px;
+}
+.outsourcing-service-card:nth-child(4) .outsourcing-service-card__image {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  width: 100%;
+  object-fit: contain;
+
+  transition: 0.3s;
+}
+.outsourcing-service-card:nth-child(4):hover .outsourcing-service-card__image {
+  filter: contrast(110%);
+}
+.outsourcing-service-card:nth-child(5) .outsourcing-service-card__image {
+  bottom: 5px;
+  right: 32px;
+}
+
+.outsourcing-advantages {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.outsourcing-advantages .section__title span {
+  color: var(--blue-400);
+}
+.outsourcing-advantages__cards {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 400px);
+  gap: 20px;
+}
+.outsourcing-advantages-card {
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.outsourcing-advantages-card:nth-child(4) {
+  color: #fff;
+}
+.outsourcing-advantages-card__title {
+  position: relative;
+  z-index: 1;
+
+  font-weight: 600;
+}
+.outsourcing-advantages-card__text {
+  position: relative;
+  z-index: 1;
+
+  font-size: 20px;
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+}
+.outsourcing-advantages-card__image {
+  position: absolute;
+}
+.outsourcing-advantages-card:nth-child(1) .outsourcing-advantages-card__image {
+  left: 20px;
+  bottom: 105px;
+}
+.outsourcing-advantages-card:nth-child(2) .outsourcing-advantages-card__image {
+  top: 26px;
+  right: 0;
+}
+.outsourcing-advantages-card:nth-child(3) .outsourcing-advantages-card__image {
+  top: 36px;
+  right: 0;
+}
+.outsourcing-advantages-card:nth-child(4) .outsourcing-advantages-card__image {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 0.3s;
+}
+.outsourcing-advantages-card:nth-child(4):hover .outsourcing-advantages-card__image {
+  filter: contrast(120%);
+}
+.outsourcing-advantages-card:nth-child(5) .outsourcing-advantages-card__image {
+  top: 72px;
+  right: 0;
+}
+.outsourcing-advantages-card:nth-child(6) .outsourcing-advantages-card__image {
+  left: 20px;
+  bottom: 125px;
+}
+@media (max-width: 1100px) {
+  .outsourcing-advantages {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .outsourcing-advantages__cards {
+    padding-bottom: 5px;
+
+    display: flex;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+  }
+  .outsourcing-advantages__cards::-webkit-scrollbar {
+    display: none;
+  }
+  .outsourcing-advantages-card {
+    flex: 0 0 350px;
+    min-height: 350px;
+
+    justify-content: flex-start;
+    gap: 20px;
+
+    scroll-snap-align: start;
+  }
+  .outsourcing-advantages-card:nth-child(1) .outsourcing-advantages-card__image {
+    left: 20px;
+    bottom: 25px;
+  }
+  .outsourcing-advantages-card:nth-child(2) .outsourcing-advantages-card__image {
+    max-width: 150px;
+    top: 120px;
+    right: 0;
+  }
+  .outsourcing-advantages-card:nth-child(3) .outsourcing-advantages-card__image {
+    max-width: 200px;
+    top: 100px;
+    right: 0;
+  }
+  .outsourcing-advantages-card:nth-child(4) .outsourcing-advantages-card__image {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.3s;
+  }
+  .outsourcing-advantages-card:nth-child(4):hover .outsourcing-advantages-card__image {
+    filter: contrast(120%);
+  }
+  .outsourcing-advantages-card:nth-child(5) .outsourcing-advantages-card__image {
+    max-width: 170px;
+    top: 120px;
+    right: 0;
+  }
+  .outsourcing-advantages-card:nth-child(6) .outsourcing-advantages-card__image {
+    left: 20px;
+    bottom: 25px;
+  }
+}
+
+.outsourcing-prices {
+  padding-top: 50px;
+  padding-bottom: 100px;
+}
+.outsourcing-prices__cards {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.outsourcing-prices-card {
+  padding: 30px;
+  border-radius: 30px;
+  background-color: #fff;
+}
+.outsourcing-prices-card__title {
+  padding-top: 20px;
+  font-weight: 600;
+}
+.outsourcing-prices-card__text {
+  font-weight: 600;
+}
+.outsourcing-prices-card__text:not(:first-child) {
+  margin-top: 30px;
+}
+.outsourcing-prices-card__text.grey {
+  color: var(--blue-700);
+}
+.outsourcing-prices-card__button {
+  margin-top: 50px;
+  max-width: 250px;
+}
+.outsourcing-prices-card .agreement {
+  margin-top: 30px;
+}
+.outsourcing-prices-card ul {
+  list-style-position: inside;
+}
+.outsourcing-prices-card ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+@media (max-width: 1100px) {
+  .outsourcing-prices {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .outsourcing-prices__cards {
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 50px 20px;
+  }
+  .outsourcing-prices-card {
+    padding: 0px;
+  }
+  .outsourcing-prices-card__title {
+    margin-bottom: 30px;
+    padding-top: 0;
+  }
+  .outsourcing-prices-card__text {
+    font-size: 20px;
+  }
+  .outsourcing-prices-card__text:not(:first-child) {
+    margin-top: 20px;
+  }
+  .outsourcing-prices-card__button {
+    flex: 0 0 100%;
+    max-width: 350px;
+  }
+  .outsourcing-prices-card .agreement {
+    margin-top: 40px;
+  }
+}
+
+.outsourcing-steps {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: var(--blue-400);
+}
+.outsourcing-steps .section__title {
+  color: #fff;
+}
+.outsourcing-steps .section__title span {
+  color: var(--blue-500);
+}
+.outsourcing-steps__cards {
+  margin-top: 50px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 200px);
+  gap: 20px;
+}
+.outsourcing-steps-card {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.outsourcing-steps-card__title {
+  font-weight: 600;
+  padding-right: 40px;
+}
+.outsourcing-steps-card__text {
+  font-size: 20px;
+  letter-spacing: -0.6px;
+  line-height: 1.1;
+}
+.outsourcing-steps-card__index {
+  position: absolute;
+  top: -20px;
+  right: -8px;
+
+  font-size: 128px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -15px;
+
+  color: var(--blue-400);
+}
+@media (max-width: 1100px) {
+  .outsourcing-steps__cards {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 150px);
+  }
+  .outsourcing-steps-card__index {
+    font-size: 96px;
+    top: -20px;
+    right: 0px;
+  }
+}
+
+.outsourcing-sign-up {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}

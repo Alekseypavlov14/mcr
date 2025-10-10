@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./assets/css/shared.css">
+  <link rel="stylesheet" href="./assets/css/outsourcing.css">
+  <title>MCR</title>
+</head>
+
+<body>
+  <div class="wrapper">
+    <!-- Header -->
+    <header id="header" class="header">
+      <div class="container">
+        <!-- Logo -->
+        <a href="index.html" class="logo">
+          <img src="./assets/img/header-logo.svg" alt="">
+        </a>
+
+        <!-- Menu -->
+        <nav class="nav">
+          <div class="nav__dropdown">
+            <a href="staff.html" class="nav__link nav__dropdown-label">
+              Подбор персонал
+            </a>
+            <div class="nav__dropdown-body">
+              <a href="staff.html#profitability" class="nav__link">Когда выгодно</a>
+              <a href="staff.html#hiring-fields" class="nav__link">По отраслям</a>
+              <a href="staff.html#advantages" class="nav__link">Преимущества</a>
+              <a href="staff.html#hiring-steps" class="nav__link">Этапы</a>
+            </div>
+          </div>
+          <a href="about.html" class="nav__link">О нас</a>
+          <a href="#" class="nav__link">Блог</a>
+          <a href="contacts.html" class="nav__link">Контакты</a>
+        </nav>
+
+        <!-- Phone numbers -->
+        <div class="header__phone-numbers">
+          <a href="tel:+74993022629">+7 (499) 302-26-29</a>
+          <a href="tel:+74992898872">+7 (499) 289-88-72</a>
+        </div>
+
+        <!-- Contacts -->
+        <div class="social-media">
+          <a href="#" class="social-media__icon">
+            <img src="./assets/img/header-phone.svg" alt="">
+          </a>
+          <a href="#" class="social-media__icon">
+            <img src="./assets/img/header-whatsapp.svg" alt="">
+          </a>
+          <a href="#" class="social-media__icon">
+            <img src="./assets/img/header-telegram.svg" alt="">
+          </a>
+        </div>
+
+        <!-- Menu for mobile -->
+        <div id="burger-button" class="burger-button">
+          <div></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Sidebar menu -->
+    <div id="sidebar" class="sidebar">
+      <div class="container">
+        <!-- Navigation -->
+        <div class="sidebar__nav">
+          <div data-sidebar-dropdown class="sidebar__nav-dropdown">
+            <div class="sidebar__nav-dropdown-label">
+              <a href="staff.html">Подбор персонал</a>
+
+              <img class="sidebar__nav-dropdown-arrow" src="./assets/img/chevron-right-blue.svg">
+            </div>
+            <div class="sidebar__nav-dropdown-body">
+              <a href="staff.html#profitability" class="sidebar__nav-dropdown-item">Когда выгодно</a>
+              <a href="staff.html#hiring-fields" class="sidebar__nav-dropdown-item">По отраслям</a>
+              <a href="staff.html#advantages" class="sidebar__nav-dropdown-item">Преимущества</a>
+              <a href="staff.html#hiring-steps" class="sidebar__nav-dropdown-item">Этапы</a>
+            </div>
+          </div>
+
+          <a href="about.html" class="sidebar__nav-link">О нас</a>
+          <a href="#" class="sidebar__nav-link">Блог</a>
+          <a href="contacts.html" class="sidebar__nav-link">Контакты</a>
+        </div>
+
+        <!-- Contacts -->
+        <div class="sidebar__contact">
+          <div class="sidebar__phone-numbers">
+            <a href="tel:+74993022629">+7 (499) 302-26-29</a>
+            <a href="tel:+74992898872">+7 (499) 289-88-72</a>
+          </div>
+
+          <a href="#" class="button button--filled sidebar__contact-button">
+            Заказать звонок
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <main class="outsourcing-hero">
+      <div class="container">
+        <h1 class="outsourcing-hero__title">Аутсорсинг гостиничного персонала</h1>
+        <h3 class="outsourcing-hero__subtitle">Быстрое решение для вашего отеля</h3>
+
+        <div class="outsourcing-hero__action">
+          <a href="#" class="button button--filled">Рассчитать стоимость подбора</a>
+          <div class="outsourcing-hero__action-message">
+            <img src="./assets/img/outsourcing-arrow-left.svg" alt="">
+            <span>
+              Закажите подбор персонала — и получите предложение
+              уже через 15 минут.
+            </span>
+          </div>
+        </div>
+
+        <div class="outsourcing-hero__cards">
+          <div class="card outsourcing-hero-card">
+            <div class="text outsourcing-hero-card__title">
+              Подберём решение под&nbsp;ваши задачи
+            </div>
+          </div>
+
+          <div class="card outsourcing-hero-card">
+            <div class="text outsourcing-hero-card__title">
+              Своя база кандидатов
+              из&nbsp;стран СНГ и Азии
+            </div>
+          </div>
+
+          <div class="card outsourcing-hero-card">
+            <div class="text outsourcing-hero-card__title">
+              Закрываем заявки
+              от&nbsp;14&nbsp;дней после договора
+            </div>
+          </div>
+        </div>
+
+        <div class="text outsourcing-hero__text">
+          «Миграционный кадровый ресурс» (МКР) предлагает комплексное
+          <span>решение по подбору и трудоустройству иностранного персонала для вашего бизнеса.</span>
+        </div>
+      </div>
+    </main>
+
+    <section class="section outsourcing-service">
+      <div class="container">
+        <h2 class="section__title">
+          Что входит в услугу <br />
+          <span>аутсорсинга курьеров</span>
+        </h2>
+
+        <div class="outsourcing-service__grid">
+          <div class="card outsourcing-service-card">
+            <h3 class="outsourcing-service-card__title">
+              Подбор персонала под задачи/запросы бизнеса
+            </h3>
+            <div class="text outsourcing-service-card__text">
+              От 10+ сотрудников
+            </div>
+            <img src="./assets/img/outsourcing-services-img-1.svg" alt="" class="outsourcing-service-card__image">
+          </div>
+
+          <div class="card outsourcing-service-card">
+            <h3 class="outsourcing-service-card__title">
+              Многоступенчатый отбор и оценка кандидатов
+            </h3>
+            <div class="text outsourcing-service-card__text">
+              Скрининг, интервью, тестирование и проверка рекомендаций
+            </div>
+            <img src="./assets/img/outsourcing-services-img-2.svg" alt="" class="outsourcing-service-card__image">
+          </div>
+
+          <div class="card outsourcing-service-card">
+            <h3 class="outsourcing-service-card__title">
+              Полное сопровождение процесса найма
+            </h3>
+            <div class="text outsourcing-service-card__text">
+              Подготовка документов, консультации, координация выхода на работу
+            </div>
+            <img src="./assets/img/outsourcing-services-img-3.svg" alt="" class="outsourcing-service-card__image">
+          </div>
+
+          <div class="card outsourcing-service-card">
+            <h3 class="outsourcing-service-card__title">
+              Адаптация
+            </h3>
+            <div class="text outsourcing-service-card__text">
+              Инструктажи, знакомство
+              с рабочим пространством
+              и мониторинг в первые недели
+            </div>
+
+            <img src="./assets/img/outsourcing-services-img-4.png" alt="" class="outsourcing-service-card__image">
+          </div>
+
+          <div class="card outsourcing-service-card">
+            <h3 class="outsourcing-service-card__title">
+              Юридическое оформление и логистика
+            </h3>
+            <div class="text outsourcing-service-card__text">
+              Получение виз, патентов, бронирование трансфера
+            </div>
+            <img src="./assets/img/outsourcing-services-img-5.svg" alt="" class="outsourcing-service-card__image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section outsourcing-advantages">
+      <div class="container">
+        <h2 class="section__title">
+          Преимущества <br />
+          <span>заказа услуг у МКР</span>
+        </h2>
+
+        <div class="outsourcing-advantages__cards">
+          <div class="card outsourcing-advantages-card">
+            <h3 class="outsourcing-advantages-card__title">
+              Собственные ЧАЗы
+            </h3>
+            <div class="outsourcing-advantages-card__text">
+              В Таджикистане, Кыргызстане, Индии, Шри-Ланке, Бангладеш
+            </div>
+            <img src="./assets/img/outsourcing-advantages-1.svg" alt="" class="outsourcing-advantages-card__image">
+          </div>
+
+          <div class="card outsourcing-advantages-card">
+            <h3 class="outsourcing-advantages-card__title">
+              Срок подбора
+            </h3>
+            <div class="outsourcing-advantages-card__text">
+              От 10 дней для стран СНГ, от 20 дней для Южной Азии
+            </div>
+            <img src="./assets/img/outsourcing-advantages-2.svg" alt="" class="outsourcing-advantages-card__image">
+          </div>
+
+          <div class="card outsourcing-advantages-card">
+            <h3 class="outsourcing-advantages-card__title">
+              Гарантия замены
+            </h3>
+            <div class="outsourcing-advantages-card__text">
+              В течение 7 дней, если сотрудник не подошёл
+            </div>
+            <img src="./assets/img/outsourcing-advantages-3.svg" alt="" class="outsourcing-advantages-card__image">
+          </div>
+
+          <div class="card outsourcing-advantages-card">
+            <h3 class="outsourcing-advantages-card__title">
+              Фиксированная стоимость
+            </h3>
+            <div class="outsourcing-advantages-card__text">
+              Без скрытых платежей
+            </div>
+            <img src="./assets/img/outsourcing-advantages-4.png" alt="" class="outsourcing-advantages-card__image">
+          </div>
+
+          <div class="card outsourcing-advantages-card">
+            <h3 class="outsourcing-advantages-card__title">
+              Легальное оформление
+            </h3>
+            <div class="outsourcing-advantages-card__text">
+              Снижаем ваши риски и издержки
+            </div>
+            <img src="./assets/img/outsourcing-advantages-5.svg" alt="" class="outsourcing-advantages-card__image">
+          </div>
+
+          <div class="card outsourcing-advantages-card">
+            <h3 class="outsourcing-advantages-card__title">
+              Опыт работы
+            </h3>
+            <div class="outsourcing-advantages-card__text">
+              С крупными федеральными клиентами (X5, Самокат, Spar и др.)
+            </div>
+            <img src="./assets/img/outsourcing-advantages-6.svg" alt="" class="outsourcing-advantages-card__image">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section outsourcing-prices">
+      <div class="container">
+        <div class="outsourcing-prices__cards">
+          <div class="outsourcing-prices-card">
+            <h2 class="outsourcing-prices-card__title">Прайс-лист</h2>
+            <div class="text outsourcing-prices-card__text">
+              Для получения точного расчёта — оставьте заявку, и наш
+              менеджер свяжется с вами
+              в течение 15 минут.
+            </div>
+  
+            <a href="#" class="button button--filled outsourcing-prices-card__button">Оставить заявку</a>
+  
+            <label class="agreement" for="prices-checkbox">
+              <div class="checkbox">
+                <input type="checkbox" id="prices-checkbox">
+                <div></div>
+              </div>
+  
+              <div class="agreement__text">
+                Я соглашаюсь с обработкой персональных данных и ознакомлен с 
+                <a href="https://mkresource.ru/privacy-policy">политикой конфиденциальности</a>
+              </div>
+            </label>
+          </div>
+  
+          <div class="outsourcing-prices-card">
+            <div class="text outsourcing-prices-card__text">
+              Стоимость аутсорсинга курьеров от 20 000 ₽ за сотрудника.
+            </div>
+            <div class="text outsourcing-prices-card__text grey">
+              Окончательная цена за услуги рассчитывается индивидуально
+              в зависимости от:
+            </div>
+            <ul class="text outsourcing-prices-card__text">
+              <li>Объёма заявки (количество сотрудников)</li>
+              <li>Специализации</li>
+              <li>Страны привлечения персонала</li>
+              <li>Срочности и сложности подбора</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section outsourcing-steps">
+      <div class="container">
+        <h2 class="section__title">
+          Этапы реализации <br />
+          <span>сотрудничества</span>
+        </h2>
+
+        <div class="outsourcing-steps__cards">
+          <div class="card outsourcing-steps-card">
+            <h3 class="outsourcing-steps-card__title">
+              Заявка
+            </h3>
+            <div class="outsourcing-steps-card__text">
+              Вы оставляете запрос с указанием контактов
+            </div>
+            <div class="outsourcing-steps-card__index">01</div>
+          </div>
+
+          <div class="card outsourcing-steps-card">
+            <h3 class="outsourcing-steps-card__title">
+              Консультация
+            </h3>
+            <div class="outsourcing-steps-card__text">
+              Уточняем потребности, детали, считаем стоимость и сроки
+            </div>
+            <div class="outsourcing-steps-card__index">02</div>
+          </div>
+
+          <div class="card outsourcing-steps-card">
+            <h3 class="outsourcing-steps-card__title">
+              Заключение договора
+            </h3>
+            <div class="outsourcing-steps-card__text">
+              Фиксируем условия и гарантии
+            </div>
+            <div class="outsourcing-steps-card__index">03</div>
+          </div>
+
+          <div class="card outsourcing-steps-card">
+            <h3 class="outsourcing-steps-card__title">
+              Поиск и отбор кандидатов
+            </h3>
+            <div class="outsourcing-steps-card__text">
+              Предоставляем кандидатов
+              на согласование
+            </div>
+            <div class="outsourcing-steps-card__index">04</div>
+          </div>
+
+          <div class="card outsourcing-steps-card">
+            <h3 class="outsourcing-steps-card__title">
+              Оформление
+              и&nbsp;переезд
+            </h3>
+            <div class="outsourcing-steps-card__text">
+              Организуем документы
+              и логистику
+            </div>
+            <div class="outsourcing-steps-card__index">05</div>
+          </div>
+
+          <div class="card outsourcing-steps-card">
+            <h3 class="outsourcing-steps-card__title">
+              Адаптация
+              и&nbsp;поддержка
+            </h3>
+            <div class="outsourcing-steps-card__text">
+              Сопровождаем сотрудников
+              на&nbsp;месте
+            </div>
+            <div class="outsourcing-steps-card__index">06</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section sign-up outsourcing-sign-up">
+      <div class="container">
+        <!-- Form -->
+        <div class="sign-up-form">
+          <div class="sign-up-form__title">Мы предоставим персонализированное предложение с расчетом по запросу. </div>
+          <div class="sign-up-form__subtitle">Наши специалисты свяжутся с вами в течение 24 часов.</div>
+
+          <div class="sign-up-form__body">
+            <div class="field">
+              <input id="sign-up-name" type="text" placeholder="Имя">
+            </div>
+            <div class="field" data-form-field="tel">
+              <input id="sign-up-phone" type="tel" placeholder="Телефон">
+            </div>
+            <div class="field" data-form-field="email">
+              <input id="sign-up-email" type="email" placeholder="Email">
+            </div>
+          </div>
+
+          <div class="agreements">
+            <label class="agreement" for="privacy-policy-checkbox">
+              <div class="checkbox">
+                <input type="checkbox" id="privacy-policy-checkbox">
+                <div></div>
+              </div>
+
+              <div class="agreement__text">
+                Я соглашаюсь с обработкой персональных данных и ознакомлен с 
+                <a href="https://mkresource.ru/privacy-policy">политикой конфиденциальности</a>
+              </div>
+            </label>
+          </div>
+
+          <button class="sign-up-form__button button button--filled">Получить предложение</butt>
+        </div>
+
+        <!-- Illustration and title -->
+        <h2 class="section__title">
+          Закройте вакансию <br />
+          <span>уже сегодня</span>
+        </h2>
+
+        <div class="text section__subtitle">
+          Мы предоставим персонализированное предложение с расчетом по запросу.
+          <span>Наши специалисты свяжутся с вами в течение 24 часов.</span>
+        </div>
+
+        <div class="sign-up__illustration">
+          <img src="./assets/img/sign-up-form-illustration.png" width="354" height="335">
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__row">
+          <div class="footer__phone-numbers">
+            <a href="tel:+74993022629">+7 (499) 302-26-29</a>
+            <a href="tel:+74992898872">+7 (499) 289-88-72</a>
+          </div>
+
+          <div class="social-media">
+            <a href="#" class="social-media__icon">
+              <img src="./assets/img/header-phone.svg" alt="">
+            </a>
+            <a href="#" class="social-media__icon">
+              <img src="./assets/img/header-whatsapp.svg" alt="">
+            </a>
+            <a href="#" class="social-media__icon">
+              <img src="./assets/img/header-telegram.svg" alt="">
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__row">
+          <a href="#" class="footer__logo">
+            <img src="./assets/img/footer-logo.svg" alt="">
+          </a>
+
+          <a href="#" class="button footer__order">Заказать звонок</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="./assets/js/header.js"></script>
+  <script src="./assets/js/sidebar.js"></script>
+</body>
+
+</html>
