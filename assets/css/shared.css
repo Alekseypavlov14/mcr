@@ -871,7 +871,7 @@ h3 {
   min-width: 1px;
 }
 .scrollable__content::after {
-  flex: 0 0 calc(var(--item-width) / 2);
+  flex: 0 0 calc(var(--margin) + var(--item-width) / 2 - var(--gap));
 }
 .scrollable__item {
   flex: 0 0 var(--item-width);

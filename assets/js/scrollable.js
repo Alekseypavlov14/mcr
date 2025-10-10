@@ -20,36 +20,39 @@ scrollableBlocks.forEach(scrollable => {
 
     isMouseDown = true
   })
-  scrollable.addEventListener('touchstart', (e) => {
-    scrollable.classList.add(scrollingClass)
-    isTouching = true
-  })
-
   window.addEventListener('mousemove', (e) => {
     if (isTouching) return
     if (!isMouseDown) return
-
+    
     const currentX = e.clientX
     const dx = currentX - startMouseX
-
+    
     scrollable.scrollTo({ left: startScrollX - dx })
   })
-
   window.addEventListener('mouseup', () => {
     scrollToNearest()
 
     scrollable.classList.remove(scrollingClass)
 
-    setTimeout(() => {
-      scrollable.classList.remove(mouseScrollingClass)
-    }, MOUSE_SCROLLING_TIMEOUT)
+    setTimeout(() => scrollable.classList.remove(mouseScrollingClass), MOUSE_SCROLLING_TIMEOUT)
 
     startScrollX = scrollable.scrollLeft
     isMouseDown = false
   })
+  
+  scrollable.addEventListener('touchstart', (e) => {
+    scrollable.classList.add(scrollingClass)
+    isTouching = true
+  })
   window.addEventListener('touchend', () => {
+    scrollToNearest()
+
     scrollable.classList.remove(scrollingClass, mouseScrollingClass)
     isTouching = false
+  })
+
+  scrollable.addEventListener('scrollend', () => {
+    scrollToNearest()
   })
 
   function scrollToNearest() {
