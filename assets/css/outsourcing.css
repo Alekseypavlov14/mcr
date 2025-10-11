@@ -365,29 +365,62 @@
   left: 20px;
   bottom: 125px;
 }
+.outsourcing-advantages__nav {
+  --link-size: 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+
+  padding: 20px 0px;
+
+  display: none;
+}
+.outsourcing-advantages__nav-link {
+  flex: 0 0 var(--link-size);
+  height: var(--link-size);
+  border-radius: var(--link-size);
+
+  background-color: var(--blue-800);
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+.outsourcing-advantages__nav-link.active {
+  background-color: var(--blue-500);
+}
 @media (max-width: 1100px) {
   .outsourcing-advantages {
     padding-top: 50px;
     padding-bottom: 50px;
   }
   .outsourcing-advantages__cards {
+    --card-width: 350px;
+
     padding-bottom: 5px;
 
     display: flex;
     overflow-x: scroll;
-    scroll-snap-type: x mandatory;
+
+    position: relative;
+  }
+  .outsourcing-advantages__cards::after {
+    content: '';
+
+    display: block;
+    flex: 0 0 calc(var(--card-width) / 2);
+    height: 1px;
   }
   .outsourcing-advantages__cards::-webkit-scrollbar {
     display: none;
   }
   .outsourcing-advantages-card {
-    flex: 0 0 350px;
+    flex: 0 0 var(--card-width);
     min-height: 350px;
 
     justify-content: flex-start;
     gap: 20px;
-
-    scroll-snap-align: start;
   }
   .outsourcing-advantages-card:nth-child(1) .outsourcing-advantages-card__image {
     left: 20px;
@@ -421,6 +454,9 @@
   .outsourcing-advantages-card:nth-child(6) .outsourcing-advantages-card__image {
     left: 20px;
     bottom: 25px;
+  }
+  .outsourcing-advantages__nav {
+    display: flex;
   }
 }
 @media (max-width: 600px) {
