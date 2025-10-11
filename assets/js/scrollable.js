@@ -68,7 +68,7 @@ scrollableBlocks.forEach(scrollable => {
     isSnapping = true
 
     const snaps = getItemsCoordinates()
-    const diffs = snaps.map(snap => Math.abs(snap - scrollable.scrollLeft))
+    const diffs = snaps.map(snap => Math.abs(snap - scrollable.scrollLeft - snaps[0]))
 
     const minDiff = Math.min(...diffs)
     const minDiffIndex = diffs.indexOf(minDiff)
@@ -78,6 +78,8 @@ scrollableBlocks.forEach(scrollable => {
 
     const scrollableSize = scrollable.clientWidth
     const scrollMargin = Math.max(0, scrollableSize - containerSize) / 2 + containerPadding
+
+    console.log(snaps, diffs, scrollable.scrollLeft);
 
     scrollable.scrollTo({ left: snaps[minDiffIndex] - scrollMargin, behavior: 'smooth' })
 

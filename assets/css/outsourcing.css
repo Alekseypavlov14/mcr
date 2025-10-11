@@ -213,20 +213,21 @@
   .outsourcing-service-card:last-child {
     grid-column: 1 / -1;
   }
+  .outsourcing-service-card__image {
+    max-height: 150px;
+  }
   .outsourcing-service-card:nth-child(1) .outsourcing-service-card__image {
-    max-height: 200px;
+    max-height: 170px;
     bottom: 0px;
     right: 50%;
     transform: translateX(50%);
   }
   .outsourcing-service-card:nth-child(2) .outsourcing-service-card__image {
-    max-height: 180px;
     bottom: 5px;
     right: 50%;
     transform: translateX(50%);
   }
   .outsourcing-service-card:nth-child(3) .outsourcing-service-card__image {
-    max-height: 200px;
     bottom: 5px;
     right: 50%;
     transform: translateX(50%);
