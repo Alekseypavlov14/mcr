@@ -578,7 +578,7 @@
 }
 @media (max-width: 600px) {
   .feedbacks-scrollable {
-    --card-width: 100%;
+    --item-width: 100%;
   }
   .feedbacks-card {
     padding: 20px;

@@ -10,6 +10,8 @@ scrollableBlocks.forEach(scrollable => {
   let isMouseDown = false
   let isTouching = false
 
+  scrollToNearest()
+
   scrollable.addEventListener('mousedown', (e) => {
     scrollable.classList.add(scrollingClass)
 
