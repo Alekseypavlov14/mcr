@@ -1,7 +1,6 @@
 // scrollable
 const scrollableBlocks = Array.from(document.querySelectorAll('[data-scrollable]'))
 const scrollingClass = 'scrolling'
-const SCROLL_TIMEOUT = 100
 
 scrollableBlocks.forEach(scrollable => {
   const items = Array.from(scrollable.querySelectorAll('.scrollable__item'))
@@ -10,8 +9,6 @@ scrollableBlocks.forEach(scrollable => {
   let startMouseX = 0
   let isMouseDown = false
   let isTouching = false
-
-  let isScrollSnapping = false
 
   scrollable.addEventListener('mousedown', (e) => {
     scrollable.classList.add(scrollingClass)
@@ -58,9 +55,6 @@ scrollableBlocks.forEach(scrollable => {
   })
 
   function scrollToNearest() {
-    if (isScrollSnapping) return
-    isScrollSnapping = true
-
     const snaps = items.map(item => item.offsetLeft)
     const normalizedSnaps = snaps.map(snap => snap - snaps[0])
     const diffs = normalizedSnaps.map(snap => Math.abs(snap - scrollable.scrollLeft))
@@ -75,9 +69,5 @@ scrollableBlocks.forEach(scrollable => {
     const scrollMargin = Math.max(0, scrollableSize - containerSize) / 2 + containerPadding
 
     scrollable.scrollTo({ left: snaps[minDiffIndex] - scrollMargin, behavior: 'smooth' })
-
-    setTimeout(() => {
-      isScrollSnapping = false
-    }, SCROLL_TIMEOUT)
   }
 })
