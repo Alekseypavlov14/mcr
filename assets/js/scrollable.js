@@ -1,6 +1,8 @@
 // scrollable
 const scrollableBlocks = Array.from(document.querySelectorAll('[data-scrollable]'))
 const scrollingClass = 'scrolling'
+
+const mouseScrollingCoefficient = 1.4
 const SCROLL_TIMEOUT = 50
 
 scrollableBlocks.forEach(scrollable => {
@@ -30,7 +32,7 @@ scrollableBlocks.forEach(scrollable => {
     if (!isMouseDown) return
     
     const currentX = e.clientX
-    const dx = currentX - startMouseX
+    const dx = (currentX - startMouseX) * mouseScrollingCoefficient
     
     scrollable.scrollTo({ left: startScrollX - dx })
   })
