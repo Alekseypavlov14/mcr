@@ -1,6 +1,7 @@
 // scrollable
 const scrollableBlocks = Array.from(document.querySelectorAll('[data-scrollable]'))
 const scrollingClass = 'scrolling'
+const SCROLL_TIMEOUT = 200
 
 scrollableBlocks.forEach(scrollable => {
   const items = Array.from(scrollable.querySelectorAll('.scrollable__item'))
@@ -9,6 +10,7 @@ scrollableBlocks.forEach(scrollable => {
   let startMouseX = 0
   let isMouseDown = false
   let isTouching = false
+  let isSnapping = false
 
   scrollToNearest()
 
@@ -30,8 +32,6 @@ scrollableBlocks.forEach(scrollable => {
     scrollable.scrollTo({ left: startScrollX - dx })
   })
   window.addEventListener('mouseup', () => {
-    scrollToNearest()
-
     scrollable.classList.remove(scrollingClass)
 
     startScrollX = scrollable.scrollLeft
@@ -43,8 +43,6 @@ scrollableBlocks.forEach(scrollable => {
     isTouching = true
   })
   window.addEventListener('touchend', () => {
-    scrollToNearest()
-
     scrollable.classList.remove(scrollingClass)
     isTouching = false
   })
@@ -53,15 +51,17 @@ scrollableBlocks.forEach(scrollable => {
     scrollToNearest()
   })
   scrollable.addEventListener('scrollend', () => {
-    if (isMouseDown) return
-    
+    if (isMouseDown || isTouching) return
+
     scrollToNearest()
   })
 
   function scrollToNearest() {
-    const snaps = items.map(item => item.offsetLeft)
-    const normalizedSnaps = snaps.map(snap => snap - snaps[0])
-    const diffs = normalizedSnaps.map(snap => Math.abs(snap - scrollable.scrollLeft))
+    if (isSnapping) return
+    isSnapping = true
+
+    const snaps = getItemsCoordinates()
+    const diffs = snaps.map(snap => Math.abs(snap - scrollable.scrollLeft))
 
     const minDiff = Math.min(...diffs)
     const minDiffIndex = diffs.indexOf(minDiff)
@@ -73,5 +73,15 @@ scrollableBlocks.forEach(scrollable => {
     const scrollMargin = Math.max(0, scrollableSize - containerSize) / 2 + containerPadding
 
     scrollable.scrollTo({ left: snaps[minDiffIndex] - scrollMargin, behavior: 'smooth' })
+
+    setTimeout(() => {
+      isSnapping = false
+    }, SCROLL_TIMEOUT)
+  }
+
+  function getItemsCoordinates() {
+    return items.map(item => {
+      return item.getBoundingClientRect().left - scrollable.getBoundingClientRect().left + scrollable.scrollLeft
+    })
   }
 })
