@@ -637,9 +637,104 @@
   padding-top: 100px;
   padding-bottom: 100px;
 }
+.outsourcing-sign-up .container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.outsourcing-sign-up .section__title {
+  display: none;
+}
+.outsourcing-sign-up .section__subtitle {
+  display: none;
+}
+.outsourcing-sign-up-form {
+  padding: 50px 30px;
+  border-radius: 30px;
+  background-color: #fff;
+}
+.outsourcing-sign-up-form__title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.7px;
+}
+.outsourcing-sign-up-form__body {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.outsourcing-sign-up-form__button {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 280px;
+}
+.outsourcing-sign-up__illustration {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+}
+.outsourcing-sign-up__illustration img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
 @media (max-width: 1100px) {
   .outsourcing-sign-up {
     padding-top: 50px;
     padding-bottom: 50px;
+  }
+  .outsourcing-sign-up .container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    row-gap: 0px;
+  }
+  .outsourcing-sign-up .section__subtitle {
+    grid-column: 1 / -1;
+    display: block;
+
+    font-size: 20px;
+    font-weight: 600;
+    max-width: 380px;
+  }
+  .outsourcing-sign-up-form {
+    padding: 0px;
+    background-color: transparent;
+  }
+  .outsourcing-sign-up-form__title {
+    display: none;
+  }
+  .outsourcing-sign-up-form__body {
+    margin-top: 0;
+  }
+}
+@media (max-width: 600px) {
+  .outsourcing-sign-up__illustration {
+    display: none;
+  }
+  .outsourcing-sign-up-form {
+    grid-column: 1 / -1;
+  }
+  .outsourcing-sign-up .section__title {
+    grid-column: 1 / -1;
+    display: block;
+  }
+  .outsourcing-sign-up .section__subtitle {
+    margin-bottom: 50px;
+    font-size: 16px;
+  }
+  .outsourcing-sign-up-form__button {
+    width: 100%;
+    max-width: 100%;
   }
 }
