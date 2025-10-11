@@ -53,6 +53,8 @@ scrollableBlocks.forEach(scrollable => {
     scrollToNearest()
   })
   scrollable.addEventListener('scrollend', () => {
+    if (isMouseDown) return
+    
     scrollToNearest()
   })
 
