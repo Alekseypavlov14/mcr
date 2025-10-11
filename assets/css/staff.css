@@ -348,15 +348,25 @@
   }
   .staff-hiring-fields__grid {
     height: 250px;
-    display: flex;
+
+    display: grid;
+    grid-template-columns: repeat(5, 300px);
+    grid-template-rows: 1fr;
   }
   .staff-hiring-fields .slider__nav {
     display: none;
   }
-  .staff-hiring-fields-card {
+  .staff-hiring-fields-card:nth-child(1),
+  .staff-hiring-fields-card:nth-child(2),
+  .staff-hiring-fields-card:nth-child(3),
+  .staff-hiring-fields-card:nth-child(4),
+  .staff-hiring-fields-card:nth-child(5) {
     --icon-size: 40px;
 
-    flex: 0 0 300px;
+    grid-column: unset;
+    grid-row: unset;
+
+    width: 100%;
     scroll-snap-align: start;
   }
   .staff-hiring-fields-card__icon img {

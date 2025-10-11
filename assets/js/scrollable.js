@@ -14,8 +14,10 @@ scrollableBlocks.forEach(scrollable => {
   let isTouching = false
   let isSnapping = false
 
+  // initial positioning
   scrollToNearest()
 
+  // for mouse
   scrollable.addEventListener('mousedown', (e) => {
     if (isSnapping) return
 
@@ -47,6 +49,7 @@ scrollableBlocks.forEach(scrollable => {
     scrollToNearest()
   })
   
+  // for touch devices
   scrollable.addEventListener('touchstart', (e) => {
     scrollable.classList.add(scrollingClass)
     isTouching = true
