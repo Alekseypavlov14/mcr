@@ -1,8 +1,6 @@
 // scrollable
 const scrollableBlocks = Array.from(document.querySelectorAll('[data-scrollable]'))
 const scrollingClass = 'scrolling'
-const mouseScrollingClass = 'mouse-scrolling'
-const MOUSE_SCROLLING_TIMEOUT = 300
 
 scrollableBlocks.forEach(scrollable => {
   const items = Array.from(document.querySelectorAll('.scrollable__item'))
@@ -13,7 +11,7 @@ scrollableBlocks.forEach(scrollable => {
   let isTouching = false
 
   scrollable.addEventListener('mousedown', (e) => {
-    scrollable.classList.add(scrollingClass, mouseScrollingClass)
+    scrollable.classList.add(scrollingClass)
 
     startScrollX = scrollable.scrollLeft
     startMouseX = e.clientX
@@ -34,8 +32,6 @@ scrollableBlocks.forEach(scrollable => {
 
     scrollable.classList.remove(scrollingClass)
 
-    setTimeout(() => scrollable.classList.remove(mouseScrollingClass), MOUSE_SCROLLING_TIMEOUT)
-
     startScrollX = scrollable.scrollLeft
     isMouseDown = false
   })
@@ -47,10 +43,13 @@ scrollableBlocks.forEach(scrollable => {
   window.addEventListener('touchend', () => {
     scrollToNearest()
 
-    scrollable.classList.remove(scrollingClass, mouseScrollingClass)
+    scrollable.classList.remove(scrollingClass)
     isTouching = false
   })
 
+  window.addEventListener('resize', () => {
+    scrollToNearest()
+  })
   scrollable.addEventListener('scrollend', () => {
     scrollToNearest()
   })
@@ -67,7 +66,7 @@ scrollableBlocks.forEach(scrollable => {
     const containerPadding = parseInt(getComputedStyle(scrollable).getPropertyValue('--container-padding'))
 
     const scrollableSize = scrollable.clientWidth
-    const scrollMargin = Math.max(0, scrollableSize - (containerSize - containerPadding * 2)) / 2
+    const scrollMargin = Math.max(0, scrollableSize - containerSize) / 2 + containerPadding
 
     scrollable.scrollTo({ left: snaps[minDiffIndex] - scrollMargin, behavior: 'smooth' })
   }

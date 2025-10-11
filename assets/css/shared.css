@@ -842,7 +842,6 @@ h3 {
   padding-bottom: 5px;
 
   overflow-x: scroll;
-  scroll-snap-type: x mandatory;
   scroll-padding: var(--margin);
 
   cursor: grab;
@@ -877,7 +876,6 @@ h3 {
 .scrollable__item {
   flex: 0 0 var(--item-width);
   scroll-margin: var(--margin);
-  scroll-snap-align: start;
 }
 @media (max-width: 600px) {
   .scrollable {

@@ -83,6 +83,9 @@
     padding-top: 100px;
     padding-bottom: 50px;
   }
+  .outsourcing-hero__subtitle {
+    font-size: 18px;
+  }
   .outsourcing-hero__action {
     margin-top: 40px;
     display: flex;
@@ -310,6 +313,10 @@
 }
 .outsourcing-advantages-card:nth-child(4) {
   color: #fff;
+  background-color: var(--blue-400);
+}
+.outsourcing-advantages-card:nth-child(4):hover {
+  background-color: var(--blue-300);
 }
 .outsourcing-advantages-card__title {
   position: relative;
@@ -565,6 +572,7 @@
   .outsourcing-steps__cards {
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: repeat(3, 150px);
+    grid-auto-flow: column;
   }
   .outsourcing-steps-card__index {
     font-size: 96px;
