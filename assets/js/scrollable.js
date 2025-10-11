@@ -1,7 +1,7 @@
 // scrollable
 const scrollableBlocks = Array.from(document.querySelectorAll('[data-scrollable]'))
 const scrollingClass = 'scrolling'
-const SCROLL_TIMEOUT = 100
+const SCROLL_TIMEOUT = 30
 
 scrollableBlocks.forEach(scrollable => {
   const items = Array.from(scrollable.querySelectorAll('.scrollable__item'))
@@ -15,6 +15,8 @@ scrollableBlocks.forEach(scrollable => {
   scrollToNearest()
 
   scrollable.addEventListener('mousedown', (e) => {
+    if (isSnapping) return
+
     scrollable.classList.add(scrollingClass)
 
     startScrollX = scrollable.scrollLeft
@@ -23,6 +25,7 @@ scrollableBlocks.forEach(scrollable => {
     isMouseDown = true
   })
   window.addEventListener('mousemove', (e) => {
+    if (isSnapping) return
     if (isTouching) return
     if (!isMouseDown) return
     
@@ -32,6 +35,8 @@ scrollableBlocks.forEach(scrollable => {
     scrollable.scrollTo({ left: startScrollX - dx })
   })
   window.addEventListener('mouseup', () => {
+    if (isSnapping) return
+    
     scrollable.classList.remove(scrollingClass)
 
     startScrollX = scrollable.scrollLeft
