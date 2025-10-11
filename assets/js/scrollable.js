@@ -61,6 +61,10 @@ scrollableBlocks.forEach(scrollable => {
         if (targetItemCoordinate > 0) scrollable.scrollTo({ left: targetItemCoordinate, behavior: 'smooth' })
       }
     }
+    // otherwise go back 
+    else {
+      scrollToNearest()
+    }
 
     startScrollX = scrollable.scrollLeft
     isMouseDown = false
