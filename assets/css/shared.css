@@ -584,7 +584,7 @@ h3 {
   cursor: pointer;
 }
 .header .nav .nav__dropdown-body {
-  width: calc(100% + 2 * var(--horizontal-padding));
+  min-width: calc(100% + 2 * var(--horizontal-padding));
   position: absolute;
   top: calc(100% + 10px);
   left: calc(0px - var(--horizontal-padding));
@@ -614,6 +614,7 @@ h3 {
   transition: 0.3s;
 
   position: relative;
+  white-space: nowrap;
 }
 .header .nav .nav__link::after {
   content: '';
