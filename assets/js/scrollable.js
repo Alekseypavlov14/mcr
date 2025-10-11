@@ -1,7 +1,7 @@
 // scrollable
 const scrollableBlocks = Array.from(document.querySelectorAll('[data-scrollable]'))
 const scrollingClass = 'scrolling'
-const SCROLL_TIMEOUT = 30
+const SCROLL_TIMEOUT = 500
 
 scrollableBlocks.forEach(scrollable => {
   const items = Array.from(scrollable.querySelectorAll('.scrollable__item'))
