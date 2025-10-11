@@ -79,8 +79,6 @@ scrollableBlocks.forEach(scrollable => {
     const scrollableSize = scrollable.clientWidth
     const scrollMargin = Math.max(0, scrollableSize - containerSize) / 2 + containerPadding
 
-    console.log(snaps, diffs, scrollable.scrollLeft);
-
     scrollable.scrollTo({ left: snaps[minDiffIndex] - scrollMargin, behavior: 'smooth' })
 
     setTimeout(() => {
