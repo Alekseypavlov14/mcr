@@ -1,7 +1,7 @@
 // scrollable
 const scrollableBlocks = Array.from(document.querySelectorAll('[data-scrollable]'))
 const scrollingClass = 'scrolling'
-const SCROLL_TIMEOUT = 200
+const SCROLL_TIMEOUT = 100
 
 scrollableBlocks.forEach(scrollable => {
   const items = Array.from(scrollable.querySelectorAll('.scrollable__item'))
@@ -36,6 +36,8 @@ scrollableBlocks.forEach(scrollable => {
 
     startScrollX = scrollable.scrollLeft
     isMouseDown = false
+
+    scrollToNearest()
   })
   
   scrollable.addEventListener('touchstart', (e) => {
