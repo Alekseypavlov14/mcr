@@ -717,6 +717,10 @@
   .outsourcing-sign-up-form__body {
     margin-top: 0;
   }
+  .outsourcing-sign-up-form__button {
+    max-width: 100%;
+    width: 100%;
+  }
 }
 @media (max-width: 600px) {
   .outsourcing-sign-up__illustration {
