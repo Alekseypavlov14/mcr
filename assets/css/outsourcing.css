@@ -172,6 +172,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
+  max-height: 170px;
 }
 .outsourcing-service-card:nth-child(1) .outsourcing-service-card__image {
   bottom: 0px;
@@ -270,6 +271,9 @@
     scroll-snap-type: x mandatory;
     padding-bottom: 5px;
   }
+  .outsourcing-service__grid::-webkit-scrollbar {
+    display: none;
+  }
   .outsourcing-service-card {
     flex: 0 0 100%;
     max-width: 335px;
@@ -282,6 +286,13 @@
   .outsourcing-service-card__text {
     margin-top: 20px;
     font-size: 16px;
+  }
+  .outsourcing-service-card:nth-child(1) .outsourcing-service-card__image,
+  .outsourcing-service-card:nth-child(2) .outsourcing-service-card__image,
+  .outsourcing-service-card:nth-child(3) .outsourcing-service-card__image,
+  .outsourcing-service-card:nth-child(4) .outsourcing-service-card__image,
+  .outsourcing-service-card:nth-child(5) .outsourcing-service-card__image {
+    max-height: 180px;
   }
   .outsourcing-service-card:nth-child(5) .outsourcing-service-card__image {
     right: 50%;
