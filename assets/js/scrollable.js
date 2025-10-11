@@ -2,14 +2,17 @@
 const scrollableBlocks = Array.from(document.querySelectorAll('[data-scrollable]'))
 const scrollingClass = 'scrolling'
 
-const mouseScrollingCoefficient = 1.4
 const SCROLL_TIMEOUT = 50
+const MIN_SCROLL_DISTANCE = 100
 
 scrollableBlocks.forEach(scrollable => {
   const items = Array.from(scrollable.querySelectorAll('.scrollable__item'))
 
+  // initial scrollable scrollLeft
   let startScrollX = 0
+  // initial mouse x
   let startMouseX = 0
+
   let isMouseDown = false
   let isTouching = false
   let isSnapping = false
@@ -34,23 +37,37 @@ scrollableBlocks.forEach(scrollable => {
     if (!isMouseDown) return
     
     const currentX = e.clientX
-    const dx = (currentX - startMouseX) * mouseScrollingCoefficient
+    const dx = currentX - startMouseX
     
     scrollable.scrollTo({ left: startScrollX - dx })
   })
-  window.addEventListener('mouseup', () => {
+  window.addEventListener('mouseup', (e) => {
     if (isSnapping) return
     
     scrollable.classList.remove(scrollingClass)
 
+    // scroll till next item if needed
+    const itemsCoordinates = getItemsCoordinates()
+    const currentScrollableX = scrollable.scrollLeft
+    const scrollDistance = e.clientX - startMouseX
+
+    // scroll to target item
+    if (Math.abs(scrollDistance) >= MIN_SCROLL_DISTANCE) {
+      if (scrollDistance > 0) {
+        const targetItemCoordinate = itemsCoordinates.findLast(coordinate => coordinate < currentScrollableX)
+        if (targetItemCoordinate > 0) scrollable.scrollTo({ left: targetItemCoordinate, behavior: 'smooth' })
+      } else if (scrollDistance < 0) {
+        const targetItemCoordinate = itemsCoordinates.find(coordinate => coordinate > currentScrollableX)
+        if (targetItemCoordinate > 0) scrollable.scrollTo({ left: targetItemCoordinate, behavior: 'smooth' })
+      }
+    }
+
     startScrollX = scrollable.scrollLeft
     isMouseDown = false
-
-    scrollToNearest()
   })
   
   // for touch devices
-  scrollable.addEventListener('touchstart', (e) => {
+  scrollable.addEventListener('touchstart', () => {
     scrollable.classList.add(scrollingClass)
     isTouching = true
   })
@@ -59,6 +76,7 @@ scrollableBlocks.forEach(scrollable => {
     isTouching = false
   })
 
+  // technical
   window.addEventListener('resize', () => {
     scrollToNearest()
   })
