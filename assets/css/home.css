@@ -368,6 +368,7 @@
 .search-specialists-fields-card__image {
   position: absolute;
   display: block;
+  max-height: 165px;
 }
 .search-specialists-fields-card:nth-child(1) .search-specialists-fields-card__image {
   right: -40px;
