@@ -171,6 +171,9 @@
   .profitability-scrollable .scrollable__content::after {
     display: none;
   }
+  .profitability-scrollable .scrollable-nav {
+    display: none;
+  }
   .profitability-card__text {
     min-height: 4.4em;
     font-size: 18px;
