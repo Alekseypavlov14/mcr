@@ -53,7 +53,6 @@
   justify-content: space-between;
 
   font-size: 24px;
-  font-weight: 600;
   line-height: 1.1;
   letter-spacing: -0.7px;
   color: var(--blue-700);
@@ -105,7 +104,7 @@
 }
 .contacts-info__button {
   width: 100%;
-  max-width: 380px;
+  max-width: 280px;
 }
 .contacts-info__image {
   flex: 1 1 auto;

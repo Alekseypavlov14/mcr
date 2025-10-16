@@ -893,12 +893,15 @@ h3 {
 .scrollable-nav__link {
   flex: 0 0 var(--link-size);
   height: var(--link-size);
-  border-radius: 50%;
-  background-color: var(--blue-600);
+  border-radius: var(--link-size);
+
+  background-color: var(--blue-800);
   transition: 0.3s;
+
+  cursor: pointer;
 }
 .scrollable-nav__link.active {
-  background-color: #fff;
+  background-color: var(--blue-500);
 }
 @media (max-width: 600px) {
   .scrollable__slider {
@@ -1126,7 +1129,7 @@ h3 {
 .footer__phone-numbers a {
   color: #fff;
 
-  font-size: 48px;
+  font-size: 36px;
   line-height: 1.1;
   letter-spacing: -1.2px;
 

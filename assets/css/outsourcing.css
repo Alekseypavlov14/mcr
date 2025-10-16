@@ -601,6 +601,7 @@
   padding-right: 50px;
 }
 .outsourcing-steps-card__text {
+  height: 2.2em;
   font-size: 20px;
   letter-spacing: -0.6px;
   line-height: 1.1;
