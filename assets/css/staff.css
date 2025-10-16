@@ -141,6 +141,7 @@
   font-weight: 600;
 }
 .profitability-card__text {
+  min-height: 3.3em;
   font-size: 20px;
   letter-spacing: -0.6px;
   line-height: 1.1;
@@ -171,6 +172,7 @@
     display: none;
   }
   .profitability-card__text {
+    min-height: 4.4em;
     font-size: 18px;
   }
   .profitability__text {
@@ -190,6 +192,7 @@
     width: 100%;
   }
   .profitability-card__text {
+    min-height: 0px;
     font-size: 16px;
   }
   .profitability__text {

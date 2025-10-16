@@ -488,7 +488,6 @@
 }
 .feedbacks .section__title {
   color: #fff;
-  text-shadow: 0px 4px 4px #00000040;
 }
 .feedbacks-scrollable {
   --item-width: 560px;
@@ -626,8 +625,8 @@
 }
 .steps-card__index {
   position: absolute;
-  bottom: -15px;
-  right: -5px;
+  bottom: -10px;
+  right: 10px;
 
   font-size: 128px;
   font-weight: 600;
@@ -650,14 +649,13 @@
     letter-spacing: -0.7px;
   }
   .steps-card__index {
-    right: -10px;
     font-size: 112px;
   }
 }
 
 @media (max-width: 600px) {
   .steps__grid {
-    --card-height: 200px;
+    --card-height: 230px;
 
     grid-template-columns: 1fr;
   }
@@ -668,9 +666,8 @@
     font-size: 16px;
   }
   .steps-card__index {
-    right: -5px;
-    bottom: -10px;
     font-size: 96px;
+    bottom: -5px;
   }
 }
 

@@ -340,6 +340,7 @@
   position: relative;
   z-index: 1;
 
+  min-height: 2.2em;
   font-size: 20px;
   line-height: 1.1;
   letter-spacing: -0.6px;
@@ -597,7 +598,7 @@
 }
 .outsourcing-steps-card__title {
   font-weight: 600;
-  padding-right: 40px;
+  padding-right: 50px;
 }
 .outsourcing-steps-card__text {
   font-size: 20px;
@@ -607,7 +608,7 @@
 .outsourcing-steps-card__index {
   position: absolute;
   top: -20px;
-  right: -8px;
+  right: 10px;
 
   font-size: 128px;
   font-weight: 600;
@@ -624,8 +625,6 @@
   }
   .outsourcing-steps-card__index {
     font-size: 96px;
-    top: -20px;
-    right: 0px;
   }
 }
 @media (max-width: 600px) {
@@ -642,6 +641,12 @@
   }
   .outsourcing-steps-card__text {
     font-size: 16px;
+  }
+  .outsourcing-steps-card__index {
+    font-size: 80px;
+    letter-spacing: -8px;
+    right: 10px;
+    top: -10px;
   }
 }
 
@@ -676,6 +681,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+.outsourcing-sign-up-form .agreements {
+  margin-top: 30px;
 }
 .outsourcing-sign-up-form__button {
   margin-top: 20px;
@@ -728,6 +736,9 @@
   }
   .outsourcing-sign-up-form__body {
     margin-top: 0;
+  }
+  .outsourcing-sign-up-form .agreements {
+    margin-top: 20px;
   }
   .outsourcing-sign-up-form__button {
     max-width: 100%;
