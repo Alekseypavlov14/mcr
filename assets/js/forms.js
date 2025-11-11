@@ -1,7 +1,7 @@
 // form fields
 const formFields = Array.from(document.querySelectorAll('[data-form-field]'))
 const mapFieldTypeToActivePlaceholder = {
-  tel: '+7 (___) ___-__-__',
+  tel: '+1 (___) ___-____',
   email: 'mail@mail.com',
 }
 
