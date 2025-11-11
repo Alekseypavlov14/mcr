@@ -813,13 +813,13 @@ h3 {
   height: var(--link-size);
   border-radius: var(--link-size);
 
-  background-color: var(--blue-800);
+  background-color: var(--blue-500);
   transition: 0.3s;
-
+  
   cursor: pointer;
 }
 .scrollable-nav__link.active {
-  background-color: var(--blue-500);
+  background-color: var(--blue-800);
 }
 @media (max-width: 600px) {
   .scrollable__slider {
